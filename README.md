@@ -1,21 +1,67 @@
 # Acelogic Agents — Releases
 
-Repositori ini hanya berisi installer resmi **Acelogic Agents**. Kode sumber aplikasi tidak disimpan di sini.
+Acelogic Agents adalah coding agent desktop yang bekerja langsung di folder proyek Anda: membaca kode, mengedit file, menjalankan perintah, dan memakai Git. Model bisa dari LM Studio atau llama.cpp di komputer sendiri, OpenAI API, atau akun ChatGPT Plus/Pro. Sejak versi 1.0.4, agent juga bisa diajak bicara, melihat layar dan kamera Anda, dan mengoperasikan komputer.
 
-This repository only hosts the official **Acelogic Agents** installers. The application source code is not published here.
+Repositori ini hanya berisi installer resmi. Kode sumber aplikasi tidak disimpan di sini.
 
-## Unduh / Download
+*English summary at the [bottom of this page](#english).*
+
+## Unduh
 
 Ambil versi terbaru di halaman **[Releases](https://github.com/acelogicg/Acelogic-Agents-Releases/releases/latest)**.
 
 | Sistem | File |
 |---|---|
-| Windows (x64) | `Acelogic-Agents-<versi>-x64-Setup.exe` |
-| Linux (x64) | `Acelogic-Agents-<versi>-x86_64.AppImage` atau `.deb` |
+| Windows 10/11 (x64) | `Acelogic-Agents-<versi>-x64-Setup.exe` |
+| Linux (x64) | `Acelogic-Agents-<versi>-x86_64.AppImage` atau `.deb` (jika tersedia di rilis tersebut) |
+
+## Baru di 1.0.4
+
+- **Live voice layar penuh.** Orb dan 56 bar gelombang bergerak mengikuti volume mikrofon Anda, dengan warna berbeda saat mendengar, mentranskripsi, menunggu agent, dan membacakan jawaban. Transkrip ucapan Anda dan jawaban agent tampil di bawahnya. Tekan `Esc` untuk mengecilkannya menjadi panel di atas kolom chat.
+- **Potong agent kapan saja.** Mulai bicara saat agent sedang membacakan jawaban, dan suaranya langsung berhenti untuk mendengarkan Anda.
+- **Agent melihat layar dan kamera.** Dengan tombol *Bagikan layar* dan *Kamera*, gambar terbaru ikut terkirim setiap kali Anda selesai bicara. Butuh model yang bisa membaca gambar.
+- **Kontrol perangkat (Windows).** Agent bisa mengambil screenshot, klik, drag, scroll, mengetik, menekan shortcut (`ctrl+c`, `alt+tab`, `win+d`), membuka dan menutup aplikasi, berpindah jendela, mengatur volume dan media, mengunci layar, serta membaca atau mengisi clipboard. Setiap giliran, agent tahu jendela mana yang sedang aktif. Perintah "buka YouTube" setelah "buka Google" memakai tab yang sama, tidak membuat tab baru.
+- **Mode izin Read-only / Full akses** di toolbar chat. Read-only memblokir penulisan file, perintah shell, server MCP buatan pengguna, dan semua aksi perangkat; agent hanya bisa membaca dan melihat. Full akses menjalankan semuanya tanpa konfirmasi.
+- **Pilihan suara pembaca** di Settings → Suara: perempuan, laki-laki, atau suara lain yang terpasang di sistem (misalnya aksen Inggris-Britania, Inggris-India, atau Indonesia). Tersedia gaya Normal, Tenang, Ceria, Berat, Cepat, dan Pelan, slider kecepatan dan nada, serta tombol dengar contoh di setiap suara.
+- **Transkripsi lebih akurat.** Pilih model Whisper Base, Small, atau Large v3 Turbo; pilihan Otomatis memakai Turbo bila GPU mendukung. Tersedia juga deteksi bahasa otomatis untuk kalimat campuran Indonesia dan Inggris. Jawaban panjang kini dibacakan sampai selesai.
+
+## Semua fitur
+
+### Agent di workspace Anda
+
+- Membaca, mencari (glob dan grep), mengedit, dan menulis file, lalu menjalankan build atau test lewat shell dan memperbaiki error yang muncul sampai lolos.
+- Rencana kerja yang terlihat di atas kolom chat, subagent untuk tugas paralel, dan progres live dalam token/detik.
+- Beberapa folder workspace sekaligus, panel Git (status, branch, checkout), terminal terintegrasi, dan riwayat sesi yang bisa disimpan lalu dibuka lagi.
+- Konteks dipadatkan otomatis saat pemakaian mencapai 75%, memori agent per workspace, dan instruksi kustom yang berlaku di semua percakapan.
+- Pengaturan reasoning effort dan tombol thinking untuk model yang mendukung, serta lampiran hingga 4 gambar untuk model vision.
+
+### Provider model
+
+- **Kompatibel OpenAI:** LM Studio, llama.cpp, vLLM, atau router model apa pun, dengan base URL dan token opsional. Daftar model dibaca otomatis dari `/v1/models`.
+- **OpenAI API key** untuk memakai model OpenAI langsung.
+- **ChatGPT Plus/Pro:** login lewat browser, tanpa API key.
+- Web search dan web fetch bisa diaktifkan dari toolbar chat, dan tetap berjalan untuk model lokal tanpa API key pencarian.
+
+### Skill, pencarian semantik, dan MCP
+
+- **39 skill bawaan** yang dimuat otomatis saat relevan, antara lain frontend-design, ui-ux-pro-max, react, nodejs, python, api-design, database-design, devops, testing, webapp-testing, mcp-builder, docx, pptx, xlsx, pdf, dan data-analysis. Anda juga bisa menambahkan skill sendiri.
+- **Embedding** (default Jina `jina-embeddings-v3`) memilih 5 skill paling relevan per pesan dan memberi agent tool `semantic_search` untuk mencari kode berdasarkan makna, bukan hanya kata yang persis sama.
+- **Server MCP** lewat stdio, HTTP, atau SSE. Konfigurasi bisa diimpor sekali klik dari Claude Code, Claude Desktop, Cursor, atau Windsurf, dan `.mcp.json` per proyek ikut dibaca.
+
+### Suara
+
+- **Dikte:** klik mikrofon, bicara, lalu hasil transkripsi masuk ke kotak pesan dan bisa diedit sebelum dikirim.
+- **Live voice:** percakapan tanpa tangan. Jeda bicara otomatis mengirim pesan, jawaban dibacakan, lalu mikrofon mendengar lagi.
+- Pengenalan suara berjalan **lokal di perangkat** memakai Whisper (WebGPU bila tersedia, CPU sebagai cadangan). Audio Anda tidak dikirim ke layanan transkripsi. Model diunduh sekali dari Hugging Face saat fitur suara pertama kali dipakai.
+
+### Tampilan dan pembaruan
+
+- Enam tema: Dark, Light, Midnight, Forest, Ocean, dan Sunset. Antarmuka tersedia dalam bahasa Indonesia dan Inggris.
+- Pembaruan otomatis: aplikasi mengecek halaman Releases ini 10 detik setelah dibuka lalu setiap 4 jam, mengunduh versi baru di latar belakang, dan menawarkan **Restart & perbarui**. Jika tidak di-restart, pembaruan dipasang saat aplikasi ditutup.
 
 ## Instalasi
 
-**Windows** — jalankan `Setup.exe`, pilih folder instalasi, lalu buka Acelogic Agents dari Start Menu atau shortcut desktop.
+**Windows:** jalankan `Setup.exe`, pilih folder instalasi, lalu buka Acelogic Agents dari Start Menu atau shortcut desktop.
 
 **Linux (AppImage)**
 
@@ -30,10 +76,27 @@ chmod +x Acelogic-Agents-*.AppImage
 sudo apt install ./Acelogic-Agents-*.deb
 ```
 
-## Pembaruan otomatis
+## Catatan penting
 
-Aplikasi yang sudah terinstal mengecek halaman Releases ini secara berkala, mengunduh versi baru di latar belakang, lalu menawarkan **Restart & perbarui**. Jika tidak di-restart, pembaruan dipasang saat aplikasi ditutup. Status pembaruan bisa dilihat di **Settings → Pembaruan**.
+- **Kontrol perangkat hanya aktif saat tombol kursor di toolbar dinyalakan**, dan mengikuti mode izin. Di Full akses, agent bisa mengklik dan mengetik tanpa bertanya. Jendela yang berjalan sebagai Administrator tidak bisa dikendalikan. Mouse, keyboard, dan jendela saat ini hanya didukung di Windows.
+- **Kamera dan layar** hanya dikirim ke provider model yang Anda pakai, dan hanya saat tombolnya aktif.
+- **Suara pembaca** memakai suara bawaan sistem operasi. Untuk menambah suara dan aksen di Windows, buka Settings → Time & language → Speech, lalu buka ulang aplikasi.
+- **Transkripsi terbaik** membutuhkan GPU. Tanpa GPU, pilih model Seimbang (Whisper Small).
+- File `latest.yml`, `latest-linux.yml`, dan `.blockmap` di setiap rilis dipakai oleh pembaruan otomatis. Jangan dihapus.
 
-Installed apps check this Releases page periodically, download new versions in the background, and offer **Restart & update**. Otherwise the update is applied when the app is closed.
+---
 
-> File `latest.yml`, `latest-linux.yml`, dan `.blockmap` di setiap rilis dipakai oleh pembaruan otomatis — jangan dihapus.
+## English
+
+Acelogic Agents is a desktop coding agent that works inside your project folder: it reads code, edits files, runs commands, and uses Git, with models from LM Studio, llama.cpp, the OpenAI API, or a ChatGPT Plus/Pro account. This repository only hosts the official installers.
+
+### New in 1.0.4
+
+- **Full-screen live voice.** A mic-reactive orb and waveform, a live transcript, and the ability to interrupt the agent by speaking over it.
+- **Screen and camera sharing.** The latest frame is sent with each thing you say.
+- **Device control on Windows.** Screenshots, clicks, typing, shortcuts, opening and closing apps, switching windows, volume and media keys, the clipboard, and locking the screen. The agent knows the active window, so "open YouTube" reuses the current browser tab.
+- **Read-only / Full access permission modes.** Read-only blocks file writes, shell commands, user MCP servers, and every device action at the runtime level.
+- **Reader voice picker.** Choose female, male, or any installed voice and accent, six speaking styles, and speed and pitch sliders.
+- **More accurate on-device speech recognition.** Choose Whisper Base, Small, or Large v3 Turbo, with automatic language detection for mixed Indonesian and English.
+
+**Everything else:** file and shell tools with plan tracking and subagents, multiple workspace folders, Git, a built-in terminal, saved sessions, and auto context compaction. You also get 39 bundled skills, embedding-based skill routing and `semantic_search`, MCP servers over stdio, HTTP, or SSE with one-click import from Claude Code, Claude Desktop, Cursor, and Windsurf, web search that works with local models, six themes, and silent auto-updates.
