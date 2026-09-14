@@ -15,6 +15,16 @@ Ambil versi terbaru di halaman **[Releases](https://github.com/acelogicg/Acelogi
 | Windows 10/11 (x64) | `Acelogic-Agents-<versi>-x64-Setup.exe` |
 | Linux (x64) | `Acelogic-Agents-<versi>-x86_64.AppImage` atau `.deb` (jika tersedia di rilis tersebut) |
 
+## Baru di 1.0.5
+
+- **Transkripsi lewat Cloudflare Workers AI.** Pilihan baru di Settings → Suara bagi komputer tanpa GPU: Whisper berjalan di Cloudflare, tanpa unduhan model. Isi Account ID dan API token (izin Workers AI), lalu pilih `whisper-tiny-en`, `whisper`, atau `whisper-large-v3-turbo`. Biaya sekitar $0,0005 per menit audio, ditagih oleh Cloudflare. Jika permintaan gagal, aplikasi otomatis kembali ke model lokal.
+- **Pilih mikrofon.** Jika komputer punya lebih dari satu mikrofon, pilih yang dipakai untuk live voice dan dikte. Bila mikrofon itu dicabut, bawaan sistem dipakai sampai perangkatnya tersambung lagi.
+- **Suara Bahasa Indonesia asli di Windows.** Suara OneCore seperti *Microsoft Andika* kini bisa dipilih sebagai suara pembaca, jadi jawaban tidak lagi dibacakan dengan aksen asing. Aplikasi memberi tahu jika paket suara Indonesia belum terpasang.
+- **Deteksi ucapan lebih andal.** Noise latar dan suara pelan dibedakan lebih baik, sehingga live voice lebih jarang terpicu oleh bunyi sekitar atau memotong kalimat Anda.
+- **Kontrol perangkat multi-monitor.** Screenshot, klik, drag, dan scroll bisa diarahkan ke monitor mana pun, termasuk dengan skala DPI berbeda.
+- **Tool `run_command`.** Saat kontrol perangkat aktif di Full akses, agent bisa menjalankan perintah PowerShell di seluruh komputer, bukan hanya di workspace.
+- **Pindah jendela lebih andal.** Jika Windows menolak memindahkan fokus (misalnya ke jendela milik Administrator), agent berhenti dan memberi tahu, alih-alih mengetik ke jendela yang salah.
+
 ## Baru di 1.0.4
 
 - **Live voice layar penuh.** Orb dan 56 bar gelombang bergerak mengikuti volume mikrofon Anda, dengan warna berbeda saat mendengar, mentranskripsi, menunggu agent, dan membacakan jawaban. Transkrip ucapan Anda dan jawaban agent tampil di bawahnya. Tekan `Esc` untuk mengecilkannya menjadi panel di atas kolom chat.
@@ -52,7 +62,7 @@ Ambil versi terbaru di halaman **[Releases](https://github.com/acelogicg/Acelogi
 
 - **Dikte:** klik mikrofon, bicara, lalu hasil transkripsi masuk ke kotak pesan dan bisa diedit sebelum dikirim.
 - **Live voice:** percakapan tanpa tangan. Jeda bicara otomatis mengirim pesan, jawaban dibacakan, lalu mikrofon mendengar lagi.
-- Pengenalan suara berjalan **lokal di perangkat** memakai Whisper (WebGPU bila tersedia, CPU sebagai cadangan). Audio Anda tidak dikirim ke layanan transkripsi. Model diunduh sekali dari Hugging Face saat fitur suara pertama kali dipakai.
+- Pengenalan suara berjalan **lokal di perangkat** memakai Whisper (WebGPU bila tersedia, CPU sebagai cadangan). Audio Anda tidak dikirim ke layanan transkripsi, kecuali Anda memilih Cloudflare. Model diunduh sekali dari Hugging Face saat fitur suara pertama kali dipakai.
 
 ### Tampilan dan pembaruan
 
@@ -89,6 +99,14 @@ sudo apt install ./Acelogic-Agents-*.deb
 ## English
 
 Acelogic Agents is a desktop coding agent that works inside your project folder: it reads code, edits files, runs commands, and uses Git, with models from LM Studio, llama.cpp, the OpenAI API, or a ChatGPT Plus/Pro account. This repository only hosts the official installers.
+
+### New in 1.0.5
+
+- **Cloudflare Workers AI transcription** for machines without a GPU, with automatic fallback to the local Whisper model.
+- **Microphone picker** for live voice and dictation.
+- **Native Indonesian reader voice on Windows** through OneCore voices such as Microsoft Andika.
+- **More reliable speech detection** that ignores background noise and cuts sentences off less often.
+- **Multi-monitor device control** and a `run_command` tool that runs PowerShell anywhere on the computer (Full access only).
 
 ### New in 1.0.4
 
