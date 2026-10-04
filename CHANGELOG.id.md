@@ -4,6 +4,45 @@ Semua perubahan penting di Acelogic Agents. Installer tersedia di halaman [Relea
 
 English: [CHANGELOG.md](CHANGELOG.md)
 
+## 1.0.12 — 4 Oktober 2026
+
+Rilis ini membuat jelas kenapa agent berhenti, dan memperbaiki jawaban yang hilang di runtime ChatGPT/OpenCode.
+
+### Baru
+
+- **Pesan error provider yang jelas.** Saat provider AI menolak permintaan, chat menyebutkan penyebab dan langkah berikutnya, lalu menampilkan pesan asli dari provider:
+  - kena rate limit, berikut lama menunggu jika provider memberitahukannya
+  - kuota atau saldo habis
+  - API key ditolak, atau akses ke model tidak diizinkan
+  - model atau endpoint tidak ditemukan
+  - percakapan melebihi batas konteks model
+  - provider timeout, sibuk, atau mengalami gangguan
+  - server model tidak bisa dihubungi (misalnya LM Studio belum jalan)
+- **Status saat mencoba ulang.** Kedua runtime mencoba ulang sendiri saat kena rate limit atau provider sibuk. Selama menunggu, status bar dan composer menampilkan alasannya, dengan hitung mundur bila provider memberitahukan waktunya, misalnya *Kena rate limit provider — mencoba lagi dalam 18 dtk*.
+- **Hapus koneksi OpenAI-compatible tersimpan.** Settings → Koneksi → *Hapus koneksi* membuang URL dan token API yang tersimpan, termasuk sisa pengaturan versi lama yang dulu muncul lagi setelah aplikasi dibuka ulang.
+
+### Diperbaiki
+
+- **Jawaban tidak lagi hilang di ChatGPT dan model lain yang memakai runtime OpenCode.** Mulai pesan kedua dalam satu sesi, jawaban kadang sudah dibuat model tetapi tidak pernah tampil, dan giliran berakhir tanpa pesan. Aplikasi kini menunggu aliran event runtime tersambung sebelum mengirim, dan melengkapi teks yang masih terlewat dari hasil akhir.
+- Jika model selesai tanpa jawaban sama sekali, chat kini memberi tahu, bukan kosong begitu saja.
+- Runtime OpenCode diberi waktu 90 detik untuk menyala (sebelumnya 15), sehingga pembukaan pertama di komputer lambat atau yang sedang dipindai antivirus tidak lagi gagal dengan *startup timed out*. Jika tetap terjadi, pesan errornya menunjuk ke antivirus dan log OpenCode.
+- Ditanya soal suara, agent sebelumnya menjawab aplikasi tidak punya fitur itu. Sekarang agent mengenal fitur aplikasinya sendiri (dikte, live voice, berbagi layar dan kamera, panel pratinjau, terminal, dan lainnya) dan menunjukkannya.
+
+## 1.0.11 — 1 Oktober 2026
+
+### Baru
+
+- Menu klik kanan di composer (Tempel, Potong, Salin, Pilih Semua) dan Salin untuk teks yang dipilih di gelembung chat.
+- Tempel screenshot dan gambar langsung dari clipboard ke composer.
+
+### Ditingkatkan
+
+- Pemakaian token lebih rendah dan stabil: sesi yang dilanjutkan tidak lagi mengirim ulang seluruh riwayat, dan prompt sistem tetap sama di setiap giliran sehingga cache provider tetap bekerja.
+
+### Diperbaiki
+
+- Pesan error lebih jelas saat runtime agent gagal dijalankan, dan folder workspace diperiksa sebelum sesi dimulai.
+
 ## 1.0.10 — 25 September 2026
 
 Rilis ini menekan biaya token setiap pesan, membuat pekerjaan panjang di model lokal lebih stabil, dan menambahkan panel pratinjau untuk file dan halaman web.

@@ -1,5 +1,14 @@
 # Acelogic Agents — Releases
 
+<p align="center">
+  <img src="screenshots/chat.png" alt="Acelogic Agents: kolom chat, pemilih model GPT-5.5, dan panel status agent" width="900">
+</p>
+
+<p align="center">
+  <a href="https://github.com/acelogicg/Acelogic-Agents-Releases/releases/latest"><b>⬇ Unduh versi terbaru</b></a>
+  &nbsp;·&nbsp; Windows 10/11 (x64)
+</p>
+
 Acelogic Agents adalah coding agent desktop yang bekerja langsung di folder proyek Anda: membaca kode, mengedit file, menjalankan perintah, dan memakai Git. Model bisa dari LM Studio atau llama.cpp di komputer sendiri, OpenAI API, atau akun ChatGPT Plus/Pro. Sejak versi 1.0.4, agent juga bisa diajak bicara, melihat layar dan kamera Anda, dan mengoperasikan komputer.
 
 Repositori ini hanya berisi installer resmi. Kode sumber aplikasi tidak disimpan di sini.
@@ -14,6 +23,15 @@ Ambil versi terbaru di halaman **[Releases](https://github.com/acelogicg/Acelogi
 |---|---|
 | Windows 10/11 (x64) | `Acelogic-Agents-<versi>-x64-Setup.exe` |
 | Linux (x64) | `Acelogic-Agents-<versi>-x86_64.AppImage` atau `.deb` (jika tersedia di rilis tersebut) |
+
+## Baru di 1.0.12
+
+- **Tahu kenapa agent berhenti.** Kalau provider AI menolak permintaan, chat sekarang menjelaskan penyebabnya dan apa yang perlu dilakukan: kena rate limit (termasuk berapa lama harus menunggu), kuota atau saldo habis, API key ditolak, model tidak ditemukan, percakapan melebihi batas konteks, atau server model tidak bisa dihubungi. Pesan asli dari provider tetap ditampilkan di bawahnya.
+- **Status saat mencoba ulang.** Selama runtime menunggu provider pulih, status bar menampilkan alasannya, misalnya *Kena rate limit provider — mencoba lagi dalam 18 dtk*, jadi agent tidak terlihat diam saja.
+- **Jawaban ChatGPT/OpenCode tidak lagi hilang.** Di pesan kedua dan seterusnya dalam satu sesi, jawaban model kadang tidak sampai ke layar walaupun sudah selesai dibuat. Sekarang selalu tampil. Jika model benar-benar selesai tanpa jawaban, chat memberi tahu.
+- **Hapus koneksi OpenAI-compatible.** Tombol *Hapus koneksi* di Settings → Koneksi membuang URL dan token yang tersimpan, termasuk sisa pengaturan dari versi lama.
+- **Runtime lebih sabar di komputer lambat.** Batas waktu menyalakan runtime OpenCode naik dari 15 menjadi 90 detik, untuk komputer yang dipindai antivirus saat pertama kali dibuka.
+- **Agent mengenal fitur aplikasinya sendiri.** Ditanya soal suara, agent kini menunjuk tombol dikte dan live voice, bukan menjawab fitur itu tidak ada.
 
 ## Baru di 1.0.5
 
@@ -60,6 +78,10 @@ Ambil versi terbaru di halaman **[Releases](https://github.com/acelogicg/Acelogi
 
 ### Suara
 
+<p align="center">
+  <img src="screenshots/live-voice.png" alt="Live voice layar penuh: orb dan gelombang suara yang bergerak mengikuti mikrofon" width="900">
+</p>
+
 - **Dikte:** klik mikrofon, bicara, lalu hasil transkripsi masuk ke kotak pesan dan bisa diedit sebelum dikirim.
 - **Live voice:** percakapan tanpa tangan. Jeda bicara otomatis mengirim pesan, jawaban dibacakan, lalu mikrofon mendengar lagi.
 - Pengenalan suara berjalan **lokal di perangkat** memakai Whisper (WebGPU bila tersedia, CPU sebagai cadangan). Audio Anda tidak dikirim ke layanan transkripsi, kecuali Anda memilih Cloudflare. Model diunduh sekali dari Hugging Face saat fitur suara pertama kali dipakai.
@@ -99,6 +121,14 @@ sudo apt install ./Acelogic-Agents-*.deb
 ## English
 
 Acelogic Agents is a desktop coding agent that works inside your project folder: it reads code, edits files, runs commands, and uses Git, with models from LM Studio, llama.cpp, the OpenAI API, or a ChatGPT Plus/Pro account. This repository only hosts the official installers.
+
+### New in 1.0.12
+
+- **Clear provider errors.** When the AI provider rejects a request, the chat explains why and what to do: rate limit (with the wait time), exhausted quota or credit, rejected API key, unknown model, context overflow, or an unreachable model server.
+- **Retry status.** While a runtime waits for the provider to recover, the status bar shows the reason, with a countdown when the provider gives one.
+- **ChatGPT/OpenCode replies no longer go missing** on follow-up messages in a session.
+- **Delete the saved OpenAI-compatible connection** from Settings → Connection.
+- **Slower machines start reliably.** The OpenCode runtime now gets 90 seconds to start instead of 15.
 
 ### New in 1.0.5
 

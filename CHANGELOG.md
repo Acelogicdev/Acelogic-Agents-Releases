@@ -4,6 +4,45 @@ All notable changes to Acelogic Agents. Installers are on the [Releases](https:/
 
 Bahasa Indonesia: [CHANGELOG.id.md](CHANGELOG.id.md)
 
+## 1.0.12 — 2026-10-04
+
+This release makes it clear why the agent stopped, and fixes replies that went missing on the ChatGPT/OpenCode runtime.
+
+### New
+
+- **Clear provider errors.** When the AI provider rejects a request, the chat names the cause and what to do next, followed by the provider's own message:
+  - rate limit, with how long to wait when the provider says so
+  - quota or credit exhausted
+  - API key rejected, or access to the model denied
+  - model or endpoint not found
+  - conversation longer than the model's context
+  - provider timeout, overloaded, or internal error
+  - model server unreachable (for example LM Studio not running)
+- **Retry status.** Both runtimes retry rate limits and overloaded providers on their own. While they wait, the status bar and composer show the reason, with a countdown when the provider gives one, for example *Provider rate limit hit — retrying in 18s*.
+- **Delete the saved OpenAI-compatible connection.** Settings → Connection → *Delete connection* removes the saved URL and API token, including leftovers from older versions that used to come back after a restart.
+
+### Fixed
+
+- **Replies no longer disappear on ChatGPT and other OpenCode-runtime models.** From the second message in a session, the reply was sometimes generated but never shown, and the turn ended with no message. The app now waits for the runtime's event stream before sending, and fills in any text it still missed from the final result.
+- If a model finishes without any reply, the chat now says so instead of showing nothing.
+- The OpenCode runtime gets 90 seconds to start instead of 15, so a first launch on a slow machine or under an antivirus scan no longer fails with *startup timed out*. The error now points to the antivirus and the OpenCode log when it does happen.
+- Asked about voice, the agent said the app had none. It now knows the app's own features (dictation, live voice, screen and camera sharing, preview panel, terminal, and more) and points to them.
+
+## 1.0.11 — 2026-10-01
+
+### New
+
+- Right-click menu in the composer (Paste, Cut, Copy, Select All) and Copy on selected text in chat bubbles.
+- Paste screenshots and images straight from the clipboard into the composer.
+
+### Improved
+
+- Lower and more stable token use: resumed sessions no longer resend the full history, and the system prompt stays identical across turns so provider caching keeps working.
+
+### Fixed
+
+- Clearer errors when the agent runtime fails to launch, and the workspace folder is checked before a session starts.
+
 ## 1.0.10 — 2026-09-25
 
 This release reduces how many tokens each message costs, makes long runs on local models more reliable, and adds a workspace preview for files and web pages.
