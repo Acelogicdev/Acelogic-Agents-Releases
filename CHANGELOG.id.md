@@ -4,6 +4,29 @@ Semua perubahan penting di Acelogic Agents. Installer tersedia di halaman [Relea
 
 English: [CHANGELOG.md](CHANGELOG.md)
 
+## 1.0.13 — 5 Oktober 2026
+
+Rilis ini memungkinkan melampirkan berkas apa pun ke pesan, menjaga cache aplikasi tetap ringan, dan membuat kode serta link di jawaban mudah dipakai.
+
+### Baru
+
+- **Lampirkan berkas.** Tombol penjepit kertas di composer kini bisa melampirkan berkas apa pun, bukan hanya gambar. Berkas juga bisa di-drag ke composer atau di-paste. Maksimal 8 lampiran per pesan.
+  - Berkas teks sampai 256 KB (kode, Markdown, JSON, CSV, log…) dikirim bersama pesan, jadi model apa pun bisa membacanya.
+  - Berkas yang lebih besar atau biner (PDF, ZIP, Word…) dikirim berupa path-nya, lalu agent membacanya dengan tool-nya.
+  - Model vision tetap menerima gambar sebagai gambar.
+- **Pembersihan cache otomatis.** Settings → Perilaku → *Bersihkan cache otomatis* menghapus cache aplikasi setiap 30 hari secara default (pilihan 7, 14, 30, 60, atau 90 hari). *Bersihkan sekarang* menampilkan ukuran cache saat ini dan langsung menghapusnya. Riwayat chat, memori, pengaturan, dan model suara yang sudah diunduh tetap aman.
+- **Salin kode.** Blok kode di jawaban punya tombol *Salin*, dan kode atau command inline seperti `npm run build` bisa disalin dengan sekali klik.
+- **Link bisa diklik.** Link di jawaban, termasuk link Markdown, terbuka di browser default.
+
+### Ditingkatkan
+
+- Lampiran tampil di dalam kotak pesan sebagai kartu rapi berisi nama, jenis, dan ukuran berkas, serta mengikuti tema yang dipilih.
+
+### Diperbaiki
+
+- Kode inline di jawaban tampil persis seperti aslinya. Nama seperti `my_var_name` dulu kehilangan garis bawahnya.
+- Berkas yang di-drop di luar kotak pesan tidak lagi menimpa jendela aplikasi, dan link tidak bisa lagi terbuka di jendela aplikasi baru.
+
 ## 1.0.12 — 4 Oktober 2026
 
 Rilis ini membuat jelas kenapa agent berhenti, dan memperbaiki jawaban yang hilang di runtime ChatGPT/OpenCode.

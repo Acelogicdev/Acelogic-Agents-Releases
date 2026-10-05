@@ -24,6 +24,13 @@ Ambil versi terbaru di halaman **[Releases](https://github.com/acelogicg/Acelogi
 | Windows 10/11 (x64) | `Acelogic-Agents-<versi>-x64-Setup.exe` |
 | Linux (x64) | `Acelogic-Agents-<versi>-x86_64.AppImage` atau `.deb` (jika tersedia di rilis tersebut) |
 
+## Baru di 1.0.13
+
+- **Lampirkan berkas apa pun.** Tombol penjepit kertas, drag & drop, atau paste ke composer, sampai 8 lampiran. Berkas teks dikirim bersama pesan, berkas besar atau biner (PDF, ZIP, Word…) dibaca agent lewat path-nya.
+- **Pembersihan cache otomatis** setiap 30 hari (bisa diatur 7–90 hari), plus tombol *Bersihkan sekarang* di Settings → Perilaku. Chat, memori, dan model suara tetap aman.
+- **Salin kode sekali klik.** Tombol *Salin* di blok kode, dan kode atau command inline tinggal diklik untuk disalin.
+- **Link di jawaban bisa diklik** dan terbuka di browser default.
+
 ## Baru di 1.0.12
 
 - **Tahu kenapa agent berhenti.** Kalau provider AI menolak permintaan, chat sekarang menjelaskan penyebabnya dan apa yang perlu dilakukan: kena rate limit (termasuk berapa lama harus menunggu), kuota atau saldo habis, API key ditolak, model tidak ditemukan, percakapan melebihi batas konteks, atau server model tidak bisa dihubungi. Pesan asli dari provider tetap ditampilkan di bawahnya.
@@ -121,6 +128,13 @@ sudo apt install ./Acelogic-Agents-*.deb
 ## English
 
 Acelogic Agents is a desktop coding agent that works inside your project folder: it reads code, edits files, runs commands, and uses Git, with models from LM Studio, llama.cpp, the OpenAI API, or a ChatGPT Plus/Pro account. This repository only hosts the official installers.
+
+### New in 1.0.13
+
+- **Attach any file.** Paperclip button, drag & drop, or paste into the composer, up to 8 attachments. Text files go with the message; large or binary files (PDF, ZIP, Word…) are read by the agent from their path.
+- **Automatic cache cleanup** every 30 days (7–90 days configurable), plus a *Clean now* button in Settings → Behavior. Chats, memory and the voice model are kept.
+- **One-click code copy.** A *Copy* button on code blocks, and inline code or commands copy with a click.
+- **Clickable links** in replies open in your default browser.
 
 ### New in 1.0.12
 

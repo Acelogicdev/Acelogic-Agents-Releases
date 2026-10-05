@@ -4,6 +4,29 @@ All notable changes to Acelogic Agents. Installers are on the [Releases](https:/
 
 Bahasa Indonesia: [CHANGELOG.id.md](CHANGELOG.id.md)
 
+## 1.0.13 — 2026-10-05
+
+This release lets you attach any file to a message, keeps the app's cache in check, and makes code and links in replies easy to use.
+
+### New
+
+- **Attach files.** The paperclip button in the composer attaches any file, not just images. You can also drag files onto the composer or paste them. Up to 8 attachments per message.
+  - Text files up to 256 KB (code, Markdown, JSON, CSV, logs…) are sent with the message, so any model can read them.
+  - Larger or binary files (PDF, ZIP, Word…) are passed by their path, and the agent reads them with its tools.
+  - Vision models still receive images as images.
+- **Automatic cache cleanup.** Settings → Behavior → *Auto clean cache* clears the app's cache every 30 days by default (7, 14, 30, 60 or 90 days). *Clean now* shows the current cache size and clears it right away. Your chats, memory, settings and the downloaded voice model are kept.
+- **Copy code.** Code blocks in replies have a *Copy* button, and inline code or commands such as `npm run build` copy with a single click.
+- **Clickable links.** Links in replies, including Markdown links, open in your default browser.
+
+### Improved
+
+- Attachments sit inside the message box as tidy cards with the file name, type and size, and follow the selected theme.
+
+### Fixed
+
+- Inline code in replies is shown exactly as written. Names like `my_var_name` used to lose their underscores.
+- Dropping a file outside the message box no longer replaces the app window, and links can no longer open inside a new app window.
+
 ## 1.0.12 — 2026-10-04
 
 This release makes it clear why the agent stopped, and fixes replies that went missing on the ChatGPT/OpenCode runtime.
