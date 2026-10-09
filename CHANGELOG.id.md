@@ -6,17 +6,17 @@ English: [CHANGELOG.md](CHANGELOG.md)
 
 ## 1.0.14 — 10 Oktober 2026
 
-Rilis ini membuat provider OpenAI-compatible bisa mengirim header sendiri, merapikan pengaturan koneksi, dan mengajarkan kebiasaan coding ke agent.
+Rilis ini membuat provider OpenAI-compatible bisa mengirim header sendiri, merapikan pengaturan koneksi, dan meningkatkan kualitas kode yang ditulis agent.
 
 ### Baru
 
 - **Header kustom untuk provider OpenAI-compatible.** Settings → Koneksi → *Header kustom* menambahkan header HTTP di setiap permintaan ke provider itu, untuk layanan yang butuh header sendiri seperti `X-Api-Key`, `api-key`, atau ID organisasi. Header bernama `Authorization` menggantikan token API. Nilai header disamarkan seperti token dan ikut terhapus lewat *Hapus koneksi*.
-- **Skill Acelogic Conventions.** Skill bawaan berisi konvensi untuk backend Node.js/TypeScript, frontend React/Vite, dan aplikasi Flutter: dependensi, struktur folder, konfigurasi `.env`, format error, migrasi database, dan deploy PM2/nginx. Agent memuatnya saat membuat proyek atau menambah fitur, dan skill ini selalu tersedia walaupun pemilihan skill mempersempit daftarnya.
+- **Skill struktur proyek.** Skill bawaan baru berisi praktik terbaik untuk menyiapkan backend, frontend web, dan aplikasi mobile: dependensi, struktur folder, konfigurasi, penanganan error, migrasi database, dan deploy. Agent memakainya saat membuat proyek atau menambah fitur.
 
 ### Ditingkatkan
 
 - **OpenAI jadi satu.** Settings → Koneksi kini hanya punya dua provider: *Kompatibel OpenAI* dan *OpenAI*. Di OpenAI, pilih metode masuk: *API key* atau *Akun ChatGPT (OAuth)*.
-- **Kode dari agent lebih rapi.** Agent tidak lagi menulis komentar di kode, mengikuti konvensi repo yang sudah ada, tidak menaruh konfigurasi dan secret di kode, tidak menampilkan detail internal ke pengguna akhir, dan tidak commit, push, atau deploy kecuali diminta. Proyek baru dimulai dari stack bawaan (pnpm, TypeScript, Express, Prisma, PM2; Vite + React; Flutter).
+- **Kode dari agent lebih baik.** Agent mengikuti gaya dan konvensi proyek yang sudah ada, tidak menaruh konfigurasi dan secret di kode, tidak menampilkan error teknis ke pengguna aplikasi Anda, dan tidak commit, push, atau deploy kecuali diminta.
 - **Settings → Preferensi.** Bagian *Perilaku* kini bernama *Preferensi*, karena isinya pilihan bahasa, tema, memori, dan cache.
 
 ## 1.0.13 — 5 Oktober 2026

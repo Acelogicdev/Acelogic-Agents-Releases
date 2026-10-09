@@ -6,17 +6,17 @@ Bahasa Indonesia: [CHANGELOG.id.md](CHANGELOG.id.md)
 
 ## 1.0.14 — 2026-10-10
 
-This release lets the OpenAI-compatible provider send its own headers, tidies up the connection settings, and teaches the agent house coding habits.
+This release lets the OpenAI-compatible provider send its own headers, tidies up the connection settings, and improves the quality of code the agent writes.
 
 ### New
 
 - **Custom headers for OpenAI-compatible providers.** Settings → Connection → *Custom headers* adds extra HTTP headers to every request to that provider, for services that need their own header such as `X-Api-Key`, `api-key`, or an organization ID. A header named `Authorization` replaces the API token. Header values are hidden like the token and are removed with *Delete connection*.
-- **Acelogic Conventions skill.** A built-in skill with house conventions for Node.js/TypeScript backends, React/Vite frontends, and Flutter apps: dependencies, folder structure, `.env` configuration, error format, database migrations, and PM2/nginx deployment. The agent loads it when creating or adding features to a project, and it is always available even when skill routing narrows the list.
+- **Project structure skill.** A new built-in skill with best practices for setting up backends, web frontends, and mobile apps: dependencies, folder structure, configuration, error handling, database migrations, and deployment. The agent uses it when creating a project or adding features.
 
 ### Improved
 
 - **OpenAI in one place.** Settings → Connection now has two providers: *OpenAI-compatible* and *OpenAI*. Under OpenAI, choose the sign-in method: *API key* or *ChatGPT account (OAuth)*.
-- **Cleaner code from the agent.** The agent no longer writes code comments, follows the repository's existing conventions, keeps configuration and secrets out of code, never shows internal details to end users, and does not commit, push, or deploy unless you ask. New projects start from a default stack (pnpm, TypeScript, Express, Prisma, PM2; Vite + React; Flutter).
+- **Better code from the agent.** The agent follows the existing style and conventions of your project, keeps configuration and secrets out of code, avoids showing technical errors to your app's end users, and does not commit, push, or deploy unless you ask.
 - **Settings → Preferences.** The *Behavior* section is now called *Preferences*, since it holds language, theme, memory, and cache options.
 
 ## 1.0.13 — 2026-10-05

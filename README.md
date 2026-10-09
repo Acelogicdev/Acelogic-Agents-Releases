@@ -28,7 +28,7 @@ Ambil versi terbaru di halaman **[Releases](https://github.com/acelogicg/Acelogi
 
 - **Header kustom** untuk provider OpenAI-compatible di Settings → Koneksi, untuk layanan yang butuh header sendiri seperti `X-Api-Key` atau `api-key`.
 - **OpenAI jadi satu provider** dengan pilihan metode masuk: *API key* atau *Akun ChatGPT (OAuth)*.
-- **Kode dari agent lebih rapi.** Tanpa komentar di kode, mengikuti konvensi repo, tanpa secret di kode, dan tidak commit atau deploy tanpa diminta. Skill bawaan *Acelogic Conventions* memandu struktur proyek backend, frontend, dan Flutter.
+- **Kode dari agent lebih baik.** Mengikuti gaya proyek yang sudah ada, tanpa secret di kode, dan tidak commit atau deploy tanpa diminta. Skill bawaan baru membantu menyusun struktur proyek backend, frontend, dan mobile.
 - **Settings → Preferensi** menggantikan nama *Perilaku*.
 
 ## Baru di 1.0.13
@@ -140,7 +140,7 @@ Acelogic Agents is a desktop coding agent that works inside your project folder:
 
 - **Custom headers** for OpenAI-compatible providers in Settings → Connection, for services that need their own header such as `X-Api-Key` or `api-key`.
 - **OpenAI is one provider** with a sign-in choice: *API key* or *ChatGPT account (OAuth)*.
-- **Cleaner code from the agent.** No code comments, follows repository conventions, no secrets in code, and no commits or deploys unless asked. The built-in *Acelogic Conventions* skill guides backend, frontend, and Flutter project structure.
+- **Better code from the agent.** Follows your project's existing style, keeps secrets out of code, and makes no commits or deploys unless asked. A new built-in skill helps structure backend, frontend, and mobile projects.
 - **Settings → Preferences** replaces the *Behavior* name.
 
 ### New in 1.0.13
