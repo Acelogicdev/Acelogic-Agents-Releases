@@ -4,6 +4,25 @@ Semua perubahan penting di Acelogic Agents. Installer tersedia di halaman [Relea
 
 English: [CHANGELOG.md](CHANGELOG.md)
 
+## 1.0.15 — 10 Oktober 2026
+
+Rilis ini menambahkan sejumlah skill desain untuk agent dan membuat skill yang sudah ada berfungsi penuh.
+
+### Baru
+
+- **Skill desain.** Agent kini bisa membantu identitas brand, design token dan design system, styling UI dengan shadcn/ui dan Tailwind, presentasi HTML, serta banner untuk media sosial dan iklan. Setiap skill membawa script, data, dan referensinya sendiri.
+- **Skill graf pengetahuan kode.** Memandu agent menelusuri struktur proyek (arsitektur, pemanggil fungsi, alur pemanggilan, dampak perubahan) saat server MCP codebase-memory terhubung.
+
+### Ditingkatkan
+
+- **Skill bawaan lengkap.** Skill UI/UX dan skill pembuat skill kini menyertakan data pencarian dan script pembantunya, jadi pencarian dan tool-nya benar-benar jalan, bukan hanya panduan tertulis.
+
+### Diubah
+
+- Skill bawaan untuk Word, PDF, PowerPoint, dan Excel dihapus. Agent tetap bisa membaca dan membuat berkas tersebut dengan tool standar.
+
+Sebagian script desain membutuhkan Python terpasang di komputer. Pembuatan logo dan ikon juga membutuhkan API key Gemini.
+
 ## 1.0.14 — 10 Oktober 2026
 
 Rilis ini membuat provider OpenAI-compatible bisa mengirim header sendiri, merapikan pengaturan koneksi, dan meningkatkan kualitas kode yang ditulis agent.

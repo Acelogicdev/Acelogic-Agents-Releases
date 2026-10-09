@@ -24,6 +24,12 @@ Ambil versi terbaru di halaman **[Releases](https://github.com/acelogicg/Acelogi
 | Windows 10/11 (x64) | `Acelogic-Agents-<versi>-x64-Setup.exe` |
 | Linux (x64) | `Acelogic-Agents-<versi>-x86_64.AppImage` atau `.deb` (jika tersedia di rilis tersebut) |
 
+## Baru di 1.0.15
+
+- **Skill desain baru:** identitas brand, design system, styling UI (shadcn/ui, Tailwind), presentasi HTML, dan banner, lengkap dengan script dan datanya.
+- **Skill bawaan lengkap.** Skill UI/UX dan pembuat skill kini menyertakan data dan script, jadi fiturnya benar-benar jalan.
+- Skill bawaan Word, PDF, PowerPoint, dan Excel dihapus; agent tetap bisa mengolah berkas tersebut dengan tool standar.
+
 ## Baru di 1.0.14
 
 - **Header kustom** untuk provider OpenAI-compatible di Settings → Koneksi, untuk layanan yang butuh header sendiri seperti `X-Api-Key` atau `api-key`.
@@ -135,6 +141,12 @@ sudo apt install ./Acelogic-Agents-*.deb
 ## English
 
 Acelogic Agents is a desktop coding agent that works inside your project folder: it reads code, edits files, runs commands, and uses Git, with models from LM Studio, llama.cpp, the OpenAI API, or a ChatGPT Plus/Pro account. This repository only hosts the official installers.
+
+### New in 1.0.15
+
+- **New design skills:** brand identity, design systems, UI styling (shadcn/ui, Tailwind), HTML presentations, and banners, with their scripts and data.
+- **Complete built-in skills.** The UI/UX and skill-creation skills now include their data and scripts, so their features actually run.
+- The built-in Word, PDF, PowerPoint, and Excel skills were removed; the agent still handles these files with standard tools.
 
 ### New in 1.0.14
 

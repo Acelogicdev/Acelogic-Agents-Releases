@@ -4,6 +4,25 @@ All notable changes to Acelogic Agents. Installers are on the [Releases](https:/
 
 Bahasa Indonesia: [CHANGELOG.id.md](CHANGELOG.id.md)
 
+## 1.0.15 — 2026-10-10
+
+This release adds a set of design skills to the agent and makes the existing ones work fully.
+
+### New
+
+- **Design skills.** The agent can now help with brand identity, design tokens and design systems, UI styling with shadcn/ui and Tailwind, HTML presentations, and banners for social media and ads. Each skill includes its own scripts, data, and references.
+- **Codebase knowledge graph skill.** Guides the agent in exploring a project's structure (architecture, callers, call chains, impact of a change) when the codebase-memory MCP server is connected.
+
+### Improved
+
+- **Complete built-in skills.** The UI/UX and skill-creation skills now include their search data and helper scripts, so their searches and tools work instead of only giving written guidance.
+
+### Changed
+
+- The built-in Word, PDF, PowerPoint, and Excel skills have been removed. The agent can still read and create these files with standard tools.
+
+Some design scripts need Python installed on your computer. Logo and icon generation also needs a Gemini API key.
+
 ## 1.0.14 — 2026-10-10
 
 This release lets the OpenAI-compatible provider send its own headers, tidies up the connection settings, and improves the quality of code the agent writes.
