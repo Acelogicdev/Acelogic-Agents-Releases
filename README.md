@@ -24,6 +24,13 @@ Ambil versi terbaru di halaman **[Releases](https://github.com/acelogicg/Acelogi
 | Windows 10/11 (x64) | `Acelogic-Agents-<versi>-x64-Setup.exe` |
 | Linux (x64) | `Acelogic-Agents-<versi>-x86_64.AppImage` atau `.deb` (jika tersedia di rilis tersebut) |
 
+## Baru di 1.0.14
+
+- **Header kustom** untuk provider OpenAI-compatible di Settings → Koneksi, untuk layanan yang butuh header sendiri seperti `X-Api-Key` atau `api-key`.
+- **OpenAI jadi satu provider** dengan pilihan metode masuk: *API key* atau *Akun ChatGPT (OAuth)*.
+- **Kode dari agent lebih rapi.** Tanpa komentar di kode, mengikuti konvensi repo, tanpa secret di kode, dan tidak commit atau deploy tanpa diminta. Skill bawaan *Acelogic Conventions* memandu struktur proyek backend, frontend, dan Flutter.
+- **Settings → Preferensi** menggantikan nama *Perilaku*.
+
 ## Baru di 1.0.13
 
 - **Lampirkan berkas apa pun.** Tombol penjepit kertas, drag & drop, atau paste ke composer, sampai 8 lampiran. Berkas teks dikirim bersama pesan, berkas besar atau biner (PDF, ZIP, Word…) dibaca agent lewat path-nya.
@@ -128,6 +135,13 @@ sudo apt install ./Acelogic-Agents-*.deb
 ## English
 
 Acelogic Agents is a desktop coding agent that works inside your project folder: it reads code, edits files, runs commands, and uses Git, with models from LM Studio, llama.cpp, the OpenAI API, or a ChatGPT Plus/Pro account. This repository only hosts the official installers.
+
+### New in 1.0.14
+
+- **Custom headers** for OpenAI-compatible providers in Settings → Connection, for services that need their own header such as `X-Api-Key` or `api-key`.
+- **OpenAI is one provider** with a sign-in choice: *API key* or *ChatGPT account (OAuth)*.
+- **Cleaner code from the agent.** No code comments, follows repository conventions, no secrets in code, and no commits or deploys unless asked. The built-in *Acelogic Conventions* skill guides backend, frontend, and Flutter project structure.
+- **Settings → Preferences** replaces the *Behavior* name.
 
 ### New in 1.0.13
 
