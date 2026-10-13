@@ -4,6 +4,17 @@ Semua perubahan penting di Acelogic Agents. Installer tersedia di halaman [Relea
 
 English: [CHANGELOG.md](CHANGELOG.md)
 
+## 1.0.17 — 13 Oktober 2026
+
+Rilis ini menampilkan sekilas file mana saja di workspace yang berubah.
+
+### Baru
+
+- **File yang berubah ditandai di workspace.** Di daftar file, file yang diubah berwarna kuning dengan **M**, file baru hijau dengan **U** (atau **A** setelah di-stage), file yang diganti nama biru dengan **R**, dan konflik merge merah dengan **!**. Folder yang berisi perubahan diberi titik, jadi Anda tahu folder mana yang perlu dibuka. Arahkan kursor ke file untuk melihat statusnya.
+- **Diperbarui saat agent bekerja.** Daftar file dan tandanya diperbarui setiap kali agent mengedit file atau menjalankan perintah.
+
+Tanda diambil dari Git, jadi muncul di folder yang merupakan repo Git dan mencakup semua perubahan yang belum di-commit, bukan hanya buatan agent.
+
 ## 1.0.16 — 13 Oktober 2026
 
 Rilis ini membuat agent terus bekerja sampai tugas selesai dan membuat pergantian model di tengah chat berjalan dengan benar.

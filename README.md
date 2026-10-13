@@ -24,6 +24,10 @@ Ambil versi terbaru di halaman **[Releases](https://github.com/acelogicg/Acelogi
 | Windows 10/11 (x64) | `Acelogic-Agents-<versi>-x64-Setup.exe` |
 | Linux (x64) | `Acelogic-Agents-<versi>-x86_64.AppImage` atau `.deb` (jika tersedia di rilis tersebut) |
 
+## Baru di 1.0.17
+
+- **File yang berubah ditandai di workspace:** M (diubah), U (baru), A, R, dan ! dengan warna berbeda; folder yang berisi perubahan diberi titik. Diperbarui setiap kali agent mengedit file atau menjalankan perintah (khusus folder repo Git).
+
 ## Baru di 1.0.16
 
 - **Agent bekerja sampai selesai.** Tidak lagi berhenti setelah menyebut langkah berikutnya atau memberi balasan kosong, dan koneksi yang putus dicoba ulang dengan pesan yang jelas.
@@ -147,6 +151,10 @@ sudo apt install ./Acelogic-Agents-*.deb
 ## English
 
 Acelogic Agents is a desktop coding agent that works inside your project folder: it reads code, edits files, runs commands, and uses Git, with models from LM Studio, llama.cpp, the OpenAI API, or a ChatGPT Plus/Pro account. This repository only hosts the official installers.
+
+### New in 1.0.17
+
+- **Changed files are marked in the workspace:** M (modified), U (new), A, R, and ! in different colors; folders that contain changes get a dot. Refreshed every time the agent edits a file or runs a command (Git repository folders only).
 
 ### New in 1.0.16
 

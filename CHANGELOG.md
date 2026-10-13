@@ -4,6 +4,17 @@ All notable changes to Acelogic Agents. Installers are on the [Releases](https:/
 
 Bahasa Indonesia: [CHANGELOG.id.md](CHANGELOG.id.md)
 
+## 1.0.17 — 2026-10-13
+
+This release shows at a glance which files in your workspace have changed.
+
+### New
+
+- **Changed files are marked in the workspace.** In the file list, modified files are yellow with **M**, new files green with **U** (or **A** once staged), renamed files blue with **R**, and merge conflicts red with **!**. Folders that contain changes get a dot, so you know which ones to open. Hover a file to see its status.
+- **Updates while the agent works.** The file list and its markers refresh every time the agent edits a file or runs a command.
+
+Markers come from Git, so they appear in folders that are Git repositories and cover every uncommitted change, not only the agent's.
+
 ## 1.0.16 — 2026-10-13
 
 This release keeps the agent working until the job is done and makes switching models mid-chat behave correctly.
