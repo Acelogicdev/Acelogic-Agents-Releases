@@ -4,6 +4,25 @@ Semua perubahan penting di Acelogic Agents. Installer tersedia di halaman [Relea
 
 English: [CHANGELOG.md](CHANGELOG.md)
 
+## 1.0.16 — 13 Oktober 2026
+
+Rilis ini membuat agent terus bekerja sampai tugas selesai dan membuat pergantian model di tengah chat berjalan dengan benar.
+
+### Ditingkatkan
+
+- **Agent tidak lagi berhenti di tengah jalan.** Kalau model menyebut langkah berikutnya tetapi berhenti tanpa mengerjakannya, atau memberi balasan kosong di tengah tugas, agent diminta melanjutkan. Rencana tugas yang panjang terus berjalan selama agent masih membuat kemajuan.
+- **Koneksi yang putus tidak lagi mengakhiri tugas diam-diam.** Kalau koneksi ke provider terputus di tengah balasan, permintaan dicoba ulang; kalau tetap gagal, muncul pesan yang jelas, bukan balasan yang tiba-tiba berhenti.
+
+### Baru
+
+- **Nama model di setiap balasan.** Statistik di bawah balasan menampilkan model yang menulisnya, jadi tetap jelas setelah Anda berganti model dalam chat yang sama.
+
+### Diperbaiki
+
+- Setelah berganti model dalam chat yang sama, batas konteks dan pemadatan otomatis kini mengikuti model yang sedang dipakai, bukan model sebelumnya (server sejenis llama.cpp).
+- Balasan panjang dari OpenAI API dan akun ChatGPT tidak lagi terputus setelah 5 menit.
+- Pemanggilan tool dalam format XML yang dipakai sebagian model Qwen kini dijalankan, bukan tampil sebagai teks lalu mengakhiri giliran.
+
 ## 1.0.15 — 10 Oktober 2026
 
 Rilis ini menambahkan sejumlah skill desain untuk agent dan membuat skill yang sudah ada berfungsi penuh.

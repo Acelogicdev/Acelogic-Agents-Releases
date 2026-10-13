@@ -4,6 +4,25 @@ All notable changes to Acelogic Agents. Installers are on the [Releases](https:/
 
 Bahasa Indonesia: [CHANGELOG.id.md](CHANGELOG.id.md)
 
+## 1.0.16 — 2026-10-13
+
+This release keeps the agent working until the job is done and makes switching models mid-chat behave correctly.
+
+### Improved
+
+- **The agent no longer stops halfway.** When the model says what it will do next but stops without doing it, or returns an empty reply in the middle of a task, the agent is told to continue. Long task plans keep going as long as the agent is making progress.
+- **Dropped connections no longer end a task silently.** If the connection to the provider breaks in the middle of a reply, the request is retried; if it still fails, you see a clear message instead of a reply that just ends.
+
+### New
+
+- **Model name on every reply.** The stats under each reply show which model wrote it, so it stays clear after you switch models in the same chat.
+
+### Fixed
+
+- After switching models in the same chat, the context limit and automatic compaction now follow the model you are using instead of the previous one (llama.cpp-style servers).
+- Long replies from the OpenAI API and ChatGPT accounts are no longer cut off after 5 minutes.
+- Tool calls written in the XML format some Qwen models use are now run instead of showing up as text and ending the turn.
+
 ## 1.0.15 — 2026-10-10
 
 This release adds a set of design skills to the agent and makes the existing ones work fully.

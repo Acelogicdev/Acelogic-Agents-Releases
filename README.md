@@ -24,6 +24,12 @@ Ambil versi terbaru di halaman **[Releases](https://github.com/acelogicg/Acelogi
 | Windows 10/11 (x64) | `Acelogic-Agents-<versi>-x64-Setup.exe` |
 | Linux (x64) | `Acelogic-Agents-<versi>-x86_64.AppImage` atau `.deb` (jika tersedia di rilis tersebut) |
 
+## Baru di 1.0.16
+
+- **Agent bekerja sampai selesai.** Tidak lagi berhenti setelah menyebut langkah berikutnya atau memberi balasan kosong, dan koneksi yang putus dicoba ulang dengan pesan yang jelas.
+- **Nama model di setiap balasan**, jadi jelas model mana yang menulisnya.
+- Ganti model di tengah chat kini ikut mengganti batas konteks dan pemadatan otomatis; balasan panjang OpenAI/ChatGPT tidak lagi terputus setelah 5 menit.
+
 ## Baru di 1.0.15
 
 - **Skill desain baru:** identitas brand, design system, styling UI (shadcn/ui, Tailwind), presentasi HTML, dan banner, lengkap dengan script dan datanya.
@@ -141,6 +147,12 @@ sudo apt install ./Acelogic-Agents-*.deb
 ## English
 
 Acelogic Agents is a desktop coding agent that works inside your project folder: it reads code, edits files, runs commands, and uses Git, with models from LM Studio, llama.cpp, the OpenAI API, or a ChatGPT Plus/Pro account. This repository only hosts the official installers.
+
+### New in 1.0.16
+
+- **The agent works until it is done.** It no longer stops after announcing its next step or returning an empty reply, and dropped connections are retried with a clear message.
+- **Model name on every reply**, so it is clear which model wrote it.
+- Switching models mid-chat now updates the context limit and automatic compaction; long OpenAI/ChatGPT replies are no longer cut off after 5 minutes.
 
 ### New in 1.0.15
 
