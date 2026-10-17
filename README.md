@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/acelogicg/Acelogic-Agents-Releases/releases/latest"><b>⬇ Unduh versi terbaru</b></a>
+  <a href="https://github.com/Acelogicdev/Acelogic-Agents-Releases/releases/latest"><b>⬇ Unduh versi terbaru</b></a>
   &nbsp;·&nbsp; Windows 10/11 (x64)
 </p>
 
@@ -17,7 +17,7 @@ Repositori ini hanya berisi installer resmi. Kode sumber aplikasi tidak disimpan
 
 ## Unduh
 
-Ambil versi terbaru di halaman **[Releases](https://github.com/acelogicg/Acelogic-Agents-Releases/releases/latest)**.
+Ambil versi terbaru di halaman **[Releases](https://github.com/Acelogicdev/Acelogic-Agents-Releases/releases/latest)**.
 
 | Sistem | File |
 |---|---|

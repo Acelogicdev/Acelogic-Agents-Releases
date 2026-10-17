@@ -1,6 +1,6 @@
 # Catatan Perubahan
 
-Semua perubahan penting di Acelogic Agents. Installer tersedia di halaman [Releases](https://github.com/acelogicg/Acelogic-Agents-Releases/releases).
+Semua perubahan penting di Acelogic Agents. Installer tersedia di halaman [Releases](https://github.com/Acelogicdev/Acelogic-Agents-Releases/releases).
 
 English: [CHANGELOG.md](CHANGELOG.md)
 
@@ -161,4 +161,4 @@ Rilis ini menekan biaya token setiap pesan, membuat pekerjaan panjang di model l
 
 ## Versi sebelumnya
 
-Catatan untuk 1.0.9 ke bawah ada di [halaman rilis](https://github.com/acelogicg/Acelogic-Agents-Releases/releases) masing-masing versi.
+Catatan untuk 1.0.9 ke bawah ada di [halaman rilis](https://github.com/Acelogicdev/Acelogic-Agents-Releases/releases) masing-masing versi.

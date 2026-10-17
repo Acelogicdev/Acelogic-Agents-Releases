@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to Acelogic Agents. Installers are on the [Releases](https://github.com/acelogicg/Acelogic-Agents-Releases/releases) page.
+All notable changes to Acelogic Agents. Installers are on the [Releases](https://github.com/Acelogicdev/Acelogic-Agents-Releases/releases) page.
 
 Bahasa Indonesia: [CHANGELOG.id.md](CHANGELOG.id.md)
 
@@ -161,4 +161,4 @@ This release reduces how many tokens each message costs, makes long runs on loca
 
 ## Earlier versions
 
-Notes for 1.0.9 and earlier are on each version's [release page](https://github.com/acelogicg/Acelogic-Agents-Releases/releases).
+Notes for 1.0.9 and earlier are on each version's [release page](https://github.com/Acelogicdev/Acelogic-Agents-Releases/releases).
