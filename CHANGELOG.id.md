@@ -4,6 +4,28 @@ Semua perubahan penting di Acelogic Agents. Installer tersedia di halaman [Relea
 
 English: [CHANGELOG.md](CHANGELOG.md)
 
+## 1.0.18 — 19 Oktober 2026
+
+Rilis ini membuat Anda bisa menjawab pertanyaan agent dengan sekali klik, menampilkan apa saja yang berubah di sebuah file, dan membuat Stop serta lanjutkan bekerja sesuai harapan.
+
+### Baru
+
+- **Jawab agent dengan sekali klik.** Saat agent perlu Anda memilih, pilihannya muncul di atas kotak pesan. Pilih satu atau lebih, tulis jawaban sendiri di **Lainnya**, atau **Lewati**, lalu agent melanjutkan dengan jawaban Anda.
+- **Lihat apa yang berubah di editor.** File yang dibuka di editor preview menampilkan garis berwarna di samping nomor baris, seperti di VS Code: hijau untuk baris baru, biru untuk baris yang diubah, dan tanda merah di tempat baris dihapus. Klik garisnya untuk melihat teks asli dan membatalkan perubahan itu. Toolbar menampilkan jumlah baris yang ditambah dan dihapus, dengan tombol (atau `Alt+F5` / `Shift+Alt+F5`) untuk berpindah antar perubahan.
+- **Notifikasi pembaruan di semua halaman.** Ikon lonceng di bar atas menampilkan progres unduhan versi baru, memberi tahu saat siap dipasang, dan bisa dipakai untuk mengecek pembaruan sendiri.
+- **Agent memahami workspace dengan banyak repository.** Agent melihat semua repository di folder workspace Anda, termasuk beberapa repository di dalam satu folder, dan menentukan repository mana yang Anda maksud sebelum mulai bekerja.
+
+### Ditingkatkan
+
+- **Stop benar-benar berhenti.** Menghentikan agent kini juga menghentikan perintah dan unduhan yang sedang dijalankannya, termasuk program yang dijalankan perintah itu. Langkah yang masih berjalan ditandai **Dihentikan**.
+- **Lanjutkan setelah Stop.** Saat Anda menghentikan agent lalu mengirim pesan lagi di chat yang sama, agent melanjutkan dari titik terakhir dan tidak lupa apa yang sedang dikerjakannya.
+- **Daftar aktivitas lebih rapi.** Saat model sempat memanggil tool yang tidak ada lalu memperbaikinya sendiri, percobaan itu tidak lagi ditampilkan sebagai kegagalan.
+
+### Diperbaiki
+
+- Agent tidak lagi menunggu tanpa akhir setelah menanyakan pilihan.
+- Menyalakan kembali tools di Settings kini langsung berlaku di chat yang sama; sebelumnya agent bisa terus bilang tidak ada tool yang tersedia.
+
 ## 1.0.17 — 13 Oktober 2026
 
 Rilis ini menampilkan sekilas file mana saja di workspace yang berubah.

@@ -4,6 +4,28 @@ All notable changes to Acelogic Agents. Installers are on the [Releases](https:/
 
 Bahasa Indonesia: [CHANGELOG.id.md](CHANGELOG.id.md)
 
+## 1.0.18 — 2026-10-19
+
+This release lets you answer the agent's questions with a click, shows exactly what changed in a file, and makes Stop and Continue behave the way you expect.
+
+### New
+
+- **Answer the agent with a click.** When the agent needs you to choose, the options appear above the message box. Pick one or more, write your own answer under **Other**, or **Skip**, and the agent carries on with your answer.
+- **See what changed in the editor.** Files opened in the preview editor show colored bars next to the line numbers, like VS Code: green for new lines, blue for changed lines, and a red marker where lines were removed. Click a bar to see the original text and undo that change. The toolbar shows how many lines were added and removed, with buttons (or `Alt+F5` / `Shift+Alt+F5`) to jump between changes.
+- **Update notifications on every page.** A bell in the top bar shows download progress for a new version, tells you when it is ready to install, and lets you check for updates yourself.
+- **The agent understands workspaces with several repositories.** It sees every repository in your workspace folders, including repositories inside one folder, and works out which one you mean before it starts.
+
+### Improved
+
+- **Stop really stops.** Stopping the agent now also ends the commands and downloads it started, including programs those commands launched. Steps that were still running are marked **Stopped**.
+- **Continue after Stop.** When you stop the agent and then send another message in the same chat, it picks up where it left off instead of forgetting what it was doing.
+- **Cleaner activity list.** When the model briefly calls a tool that does not exist and then corrects itself, that attempt is no longer shown as a failure.
+
+### Fixed
+
+- The agent no longer waits forever after asking a multiple-choice question.
+- Turning tools back on in Settings now works in the same chat; before, the agent could keep saying no tools were available.
+
 ## 1.0.17 — 2026-10-13
 
 This release shows at a glance which files in your workspace have changed.
