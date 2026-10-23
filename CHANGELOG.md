@@ -4,6 +4,23 @@ All notable changes to Acelogic Agents. Installers are on the [Releases](https:/
 
 Bahasa Indonesia: [CHANGELOG.id.md](CHANGELOG.id.md)
 
+## 1.0.19 — 2026-10-23
+
+This release makes the preview panel work like the tabs in VS Code.
+
+### New
+
+- **More ways to close tabs.** Right-click a tab in the preview panel to close it, close all other tabs, close the tabs to its right, close the tabs with no unsaved changes, or close them all. You can also copy a file's path, or the page address of the browser tab. Click a tab with the middle mouse button to close it.
+
+### Improved
+
+- **The browser opens only when you need it.** The preview panel no longer opens on the browser by default. Open the browser with the globe button at the top of the panel, or with **Open in browser** on an HTML file. The browser tab can be closed like any other tab, and its name shows the site you are viewing.
+- **Fewer confirmations.** When you close several tabs that have unsaved changes, you are asked once instead of once per file.
+
+### Fixed
+
+- The browser no longer reopens the last page from your previous session, so a local dev server you have already stopped is not loaded when you open the preview.
+
 ## 1.0.18 — 2026-10-19
 
 This release lets you answer the agent's questions with a click, shows exactly what changed in a file, and makes Stop and Continue behave the way you expect.

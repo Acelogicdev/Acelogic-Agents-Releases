@@ -4,6 +4,23 @@ Semua perubahan penting di Acelogic Agents. Installer tersedia di halaman [Relea
 
 English: [CHANGELOG.md](CHANGELOG.md)
 
+## 1.0.19 — 23 Oktober 2026
+
+Rilis ini membuat panel preview bekerja seperti tab di VS Code.
+
+### Baru
+
+- **Lebih banyak cara menutup tab.** Klik kanan tab di panel preview untuk menutupnya, menutup semua tab lain, menutup tab di sebelah kanannya, menutup tab yang tidak punya perubahan belum disimpan, atau menutup semuanya. Anda juga bisa menyalin path file, atau alamat halaman di tab browser. Klik tab dengan tombol tengah mouse untuk menutupnya.
+
+### Ditingkatkan
+
+- **Browser hanya terbuka saat dibutuhkan.** Panel preview tidak lagi langsung membuka browser. Buka browser lewat tombol globe di bagian atas panel, atau lewat **Buka di browser** pada file HTML. Tab browser bisa ditutup seperti tab lain, dan namanya menampilkan situs yang sedang dibuka.
+- **Konfirmasi lebih sedikit.** Saat Anda menutup beberapa tab yang punya perubahan belum disimpan, Anda cukup ditanya sekali, tidak lagi satu per satu.
+
+### Diperbaiki
+
+- Browser tidak lagi membuka halaman terakhir dari sesi sebelumnya, jadi dev server lokal yang sudah Anda matikan tidak dimuat saat preview dibuka.
+
 ## 1.0.18 — 19 Oktober 2026
 
 Rilis ini membuat Anda bisa menjawab pertanyaan agent dengan sekali klik, menampilkan apa saja yang berubah di sebuah file, dan membuat Stop serta lanjutkan bekerja sesuai harapan.
