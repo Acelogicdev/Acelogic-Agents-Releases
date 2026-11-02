@@ -4,6 +4,28 @@ Semua perubahan penting di Acelogic Agents. Installer tersedia di halaman [Relea
 
 English: [CHANGELOG.md](CHANGELOG.md)
 
+## 1.0.20 — 2 November 2026
+
+Rilis ini membuat agent berguna untuk pertanyaan dan diskusi sehari-hari, tidak lagi melupakan percakapan, dan memberi pengaturan thinking untuk lebih banyak model.
+
+### Baru
+
+- **Pengaturan thinking untuk lebih banyak model.** Model reasoning dari provider OpenAI-compatible mana pun kini mendapat tombol thinking dan pilihan tingkat penalaran: bawaan model, rendah, sedang, atau tinggi. Ini termasuk OpenAI, OpenRouter, DeepSeek, Groq, Gemini, Ollama, vLLM, dan lainnya.
+- **Format thinking per model.** Jika model mengabaikan tombol thinking, pilih cara pengaturannya dikirim di **Pengaturan → Koneksi → Format thinking**. Pilihan disimpan untuk model itu. **Otomatis** cocok untuk sebagian besar provider.
+
+### Ditingkatkan
+
+- **Asisten umum, bukan hanya agent coding.** Ngobrol, diskusikan ide, atau ajukan pertanyaan umum dan dapatkan jawaban langsung yang natural, dengan atau tanpa ruang kerja. Tanpa ruang kerja, agent bekerja dalam mode umum dan tetap bisa memakai semua alatnya.
+- **Agent mengecek sendiri.** Saat pertanyaan bergantung pada sesuatu yang bisa dicek, seperti spesifikasi komputer Anda, versi terbaru sebuah tool, file Anda, atau layanan yang terhubung, agent mengeceknya dulu tanpa diminta, lalu menjawab. Jika fitur yang dibutuhkan mati, agent tetap menjawab dan memberi tahu fitur mana yang perlu dinyalakan.
+- **Layanan yang terhubung selalu terjangkau.** Agent mengetahui semua server MCP yang terhubung, termasuk yang tidak dimuat untuk suatu pesan, dan bisa memakainya saat membantu.
+- **Model reasoning lebih cepat dikenali.** Banyak model reasoning terbaru dikenali dari namanya, dan model yang pernah menampilkan proses berpikirnya tetap diingat setelah aplikasi dibuka ulang.
+
+### Diperbaiki
+
+- Agent tidak lagi melupakan percakapan saat Anda menyalakan atau mematikan web tools atau fitur lain, mengganti provider, atau mengganti ruang kerja di chat yang sama. Agent juga tetap ingat apa yang ditemukan alatnya sebelumnya.
+- Mematikan **Memori** di Pengaturan tidak lagi membuat agent melupakan chat yang sedang berjalan. Pengaturan ini hanya memengaruhi memori antar-chat.
+- Provider yang menolak pengaturan tak dikenal tidak lagi gagal saat thinking dimatikan. Pengaturan thinking yang tidak diterima provider otomatis dibuang.
+
 ## 1.0.19 — 23 Oktober 2026
 
 Rilis ini membuat panel preview bekerja seperti tab di VS Code.

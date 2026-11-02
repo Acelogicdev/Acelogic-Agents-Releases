@@ -4,6 +4,28 @@ All notable changes to Acelogic Agents. Installers are on the [Releases](https:/
 
 Bahasa Indonesia: [CHANGELOG.id.md](CHANGELOG.id.md)
 
+## 1.0.20 — 2026-11-02
+
+This release makes the agent useful for everyday questions and discussion, keeps it from forgetting the conversation, and gives you thinking controls for more models.
+
+### New
+
+- **Thinking controls for more models.** Reasoning models from any OpenAI-compatible provider now get the thinking toggle and a choice of effort: model default, low, medium, or high. This includes OpenAI, OpenRouter, DeepSeek, Groq, Gemini, Ollama, vLLM, and others.
+- **Thinking format per model.** If a model ignores the thinking toggle, pick how the setting is sent in **Settings → Connection → Thinking format**. The choice is saved for that model. **Automatic** suits most providers.
+
+### Improved
+
+- **A general assistant, not only a coding agent.** Chat, discuss ideas, or ask general questions and get a direct, natural answer, with or without a workspace. Without a workspace the agent works in general mode and can still use all of its tools.
+- **The agent checks things for you.** When a question depends on something it can look up, such as your computer's hardware, the latest version of a tool, your files, or a connected service, the agent checks it first without being asked, then answers. If the feature it needs is off, it still answers and tells you which feature to turn on.
+- **Connected services are always within reach.** The agent knows about all your connected MCP servers, even ones it did not load for a message, and can use them when they would help.
+- **Reasoning models are recognized sooner.** Many recent reasoning models are recognized by name, and a model that has shown its thinking once is remembered after you restart the app.
+
+### Fixed
+
+- The agent no longer forgets the conversation when you turn web tools or other features on or off, switch provider, or change workspace in the same chat. It also remembers what its tools found earlier.
+- Turning off **Memory** in Settings no longer makes the agent forget the current chat. It only affects memory across chats.
+- Providers that reject unknown settings no longer fail when thinking is turned off. Thinking settings a provider does not accept are dropped automatically.
+
 ## 1.0.19 — 2026-10-23
 
 This release makes the preview panel work like the tabs in VS Code.
