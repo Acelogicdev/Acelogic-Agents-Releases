@@ -4,6 +4,20 @@ Semua perubahan penting di Acelogic Agents. Installer tersedia di halaman [Relea
 
 English: [CHANGELOG.md](CHANGELOG.md)
 
+## 1.0.23 — 14 November 2026
+
+Rilis ini membuat model lokal seperti Qwen menjalankan tool dengan benar dan menambahkan kepercayaan workspace seperti VS Code.
+
+### Baru
+
+- Saat menambahkan folder, aplikasi bertanya apakah Anda memercayai pembuat file di folder itu. Folder yang dipercaya memuat hook, server MCP, instruksi, dan pengaturan milik proyek. Folder yang tidak dipercaya dibuka dalam Mode Terbatas: agent tetap bekerja tetapi mengabaikan konfigurasi itu. Pilihan Anda diingat.
+- Banner Mode Terbatas muncul di atas chat untuk folder yang belum dipercaya, dengan tombol untuk memercayainya nanti.
+
+### Diperbaiki
+
+- Beberapa model Qwen menampilkan pemanggilan tool sebagai teks mentah seperti `<function=bash>` alih-alih menjalankannya. Sekarang pemanggilan itu dijalankan.
+- Nama tool dengan huruf besar-kecil berbeda, misalnya `bash` untuk `Bash`, sekarang dikenali.
+
 ## 1.0.22 — 14 November 2026
 
 Rilis ini merapikan jawaban dari model kecil.

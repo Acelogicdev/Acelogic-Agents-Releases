@@ -4,6 +4,20 @@ All notable changes to Acelogic Agents. Installers are on the [Releases](https:/
 
 Bahasa Indonesia: [CHANGELOG.id.md](CHANGELOG.id.md)
 
+## 1.0.23 — 2026-11-14
+
+This release makes local models such as Qwen run their tools reliably and adds workspace trust like VS Code.
+
+### New
+
+- When you add a folder, the app asks whether you trust the authors of its files. Trusted folders load the project's own hooks, MCP servers, instructions, and settings. Untrusted folders open in Restricted Mode: the agent still works but ignores that configuration. Your choice is remembered.
+- A Restricted Mode banner appears above the chat for untrusted folders, with a button to trust the folder later.
+
+### Fixed
+
+- Some Qwen models showed tool calls as raw text such as `<function=bash>` instead of running them. These calls now run.
+- Tool names written in a different case, such as `bash` instead of `Bash`, are now recognized.
+
 ## 1.0.22 — 2026-11-14
 
 This release cleans up answers from small models.
