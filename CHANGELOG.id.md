@@ -4,6 +4,32 @@ Semua perubahan penting di Acelogic Agents. Installer tersedia di halaman [Relea
 
 English: [CHANGELOG.md](CHANGELOG.md)
 
+## 1.0.21 — 14 November 2026
+
+Rilis ini membuat agent menuntaskan pekerjaannya dengan benar: memeriksa perubahannya sendiri, tetap berjalan saat memakai subagent, dan menjaga ruang kerja tetap sinkron seperti VS Code.
+
+### Baru
+
+- **Agent memeriksa hasil kerjanya sendiri.** Setelah mengubah kode, agent menjalankan pemeriksaan proyek Anda, seperti lint, type check, test, atau build, lalu memperbaiki temuannya sebelum melapor. Ini berlaku untuk proyek JavaScript, TypeScript, Python, Go, Rust, Flutter, .NET, Java, dan PHP. Jika tool pemeriksaan belum terpasang, agent memasang dependensi proyek lalu mencoba lagi, tidak melewatkan pemeriksaannya.
+- **Ruang kerja memperbarui dirinya sendiri.** File yang dibuat, diubah, atau dihapus di luar aplikasi, serta branch yang diganti dari terminal lain, langsung tampil di panel ruang kerja, bahkan saat agent sedang berjalan.
+- **Hapus server MCP.** Buka **Pengaturan → MCP** dan hapus server yang tidak lagi dibutuhkan.
+
+### Ditingkatkan
+
+- **Cari kode tanpa diberi tahu lokasinya.** Jelaskan apa yang ingin diubah, dan agent mencari kode yang tepat sendiri, memeriksa bagian lain yang memakainya, lalu memberi tahu apa saja yang diubah.
+- **Satu tempat untuk instruksi agent.** **Pengaturan → Instruksi** menampilkan instruksi agent dalam satu kotak yang bisa diedit. Ubah sesuai kebutuhan, atau klik **Reset ke default** untuk kembali. Instruksinya juga lebih ringkas.
+- **Ruang kerja tetap bisa dipakai saat agent bekerja.** Anda bisa memilih, menambah, menghapus, dan me-refresh folder saat agent berjalan.
+- **Top bar lebih bersih.** Label repository dan branch dipindah dari top bar. Keduanya tetap bisa dilihat dan diganti di panel Agent.
+- **Tidak ada "semua beres" yang terlalu dini.** Jika model mengklaim semuanya lulus sebelum benar-benar memeriksa, jawaban itu disembunyikan dan diganti hasil yang sebenarnya.
+
+### Diperbaiki
+
+- Agent tidak lagi macet saat menyerahkan pekerjaan ke subagent.
+- Menghentikan agent lalu mengetik "lanjutkan" atau mengirim pesan baru tetap mempertahankan percakapan, bahkan jika dihentikan tepat saat baru mulai.
+- Panel ruang kerja tidak lagi meluber atau tidak bisa di-scroll dan diklik saat beberapa folder dibuka.
+- Kotak instruksi di Pengaturan bisa di-scroll.
+- Pesan error tidak lagi menyebut LM Studio.
+
 ## 1.0.20 — 2 November 2026
 
 Rilis ini membuat agent berguna untuk pertanyaan dan diskusi sehari-hari, tidak lagi melupakan percakapan, dan memberi pengaturan thinking untuk lebih banyak model.

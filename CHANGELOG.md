@@ -4,6 +4,32 @@ All notable changes to Acelogic Agents. Installers are on the [Releases](https:/
 
 Bahasa Indonesia: [CHANGELOG.id.md](CHANGELOG.id.md)
 
+## 1.0.21 — 2026-11-14
+
+This release makes the agent finish its work properly: it checks its own changes, keeps going with subagents, and keeps the workspace in sync like VS Code.
+
+### New
+
+- **The agent checks its own work.** After editing code, the agent runs your project's checks, such as lint, type checks, tests, or build, and fixes what they find before it reports back. This works for JavaScript, TypeScript, Python, Go, Rust, Flutter, .NET, Java, and PHP projects. If a check tool is missing, the agent installs the project's dependencies and tries again instead of skipping the check.
+- **The workspace updates itself.** Files created, changed, or deleted outside the app, and branches switched from another terminal, show up in the workspace panel right away, even while the agent is running.
+- **Remove MCP servers.** Open **Settings → MCP** and remove a server you no longer need.
+
+### Improved
+
+- **Find code without telling it where.** Describe what you want changed, and the agent looks for the right code itself, checks other places that use it, and tells you what it changed.
+- **One place for agent instructions.** **Settings → Instructions** shows the agent's instructions in a single editable box. Change them as you like, or click **Reset to default** to go back. The instructions are also shorter.
+- **The workspace stays usable while the agent works.** You can select, add, remove, and refresh folders while the agent is running.
+- **A cleaner top bar.** The repository and branch labels moved out of the top bar. You can still see and switch them in the Agent panel.
+- **No early "all done".** If a model claims everything passed before actually checking, that answer is hidden and replaced by the real result.
+
+### Fixed
+
+- The agent no longer gets stuck when it hands work to a subagent.
+- Stopping the agent and then saying "continue" or sending a new message keeps the conversation, even if you stopped it right as it started.
+- The workspace panel no longer overflows or becomes impossible to scroll or click when several folders are expanded.
+- The instructions box in Settings can be scrolled.
+- Error messages no longer mention LM Studio.
+
 ## 1.0.20 — 2026-11-02
 
 This release makes the agent useful for everyday questions and discussion, keeps it from forgetting the conversation, and gives you thinking controls for more models.
