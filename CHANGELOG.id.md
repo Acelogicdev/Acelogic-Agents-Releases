@@ -4,6 +4,15 @@ Semua perubahan penting di Acelogic Agents. Installer tersedia di halaman [Relea
 
 English: [CHANGELOG.md](CHANGELOG.md)
 
+## 1.0.22 — 14 November 2026
+
+Rilis ini merapikan jawaban dari model kecil.
+
+### Diperbaiki
+
+- Jawaban tidak lagi diakhiri baris template nyasar seperti "skipped: [X], add when [Y]". Beberapa model kecil menyalinnya dari catatan internal agent.
+- Agent tidak lagi menyebut layanan terhubung yang dilewati untuk suatu pesan, kecuali memang dibutuhkan.
+
 ## 1.0.21 — 14 November 2026
 
 Rilis ini membuat agent menuntaskan pekerjaannya dengan benar: memeriksa perubahannya sendiri, tetap berjalan saat memakai subagent, dan menjaga ruang kerja tetap sinkron seperti VS Code.

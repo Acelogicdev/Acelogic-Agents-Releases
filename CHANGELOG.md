@@ -4,6 +4,15 @@ All notable changes to Acelogic Agents. Installers are on the [Releases](https:/
 
 Bahasa Indonesia: [CHANGELOG.id.md](CHANGELOG.id.md)
 
+## 1.0.22 — 2026-11-14
+
+This release cleans up answers from small models.
+
+### Fixed
+
+- Answers no longer end with a stray template line such as "skipped: [X], add when [Y]". Some small models copied these from the agent's internal notes.
+- The agent no longer mentions connected services it skipped for a message unless one is actually needed.
+
 ## 1.0.21 — 2026-11-14
 
 This release makes the agent finish its work properly: it checks its own changes, keeps going with subagents, and keeps the workspace in sync like VS Code.
