@@ -4,6 +4,23 @@ All notable changes to Acelogic Agents. Installers are on the [Releases](https:/
 
 Bahasa Indonesia: [CHANGELOG.id.md](CHANGELOG.id.md)
 
+## 1.0.24 — 2026-11-15
+
+This release replaces the built-in skills with a focused set that teaches the agent to verify its work, especially on local models.
+
+### New
+
+- 33 built-in skills for everyday fullstack work: planning, exploring code, building features across database, API, web, and Flutter, debugging, reviews, security, migrations, money and time handling, background jobs, integrations, testing, git, and deployment.
+- Skills that make local models more reliable: a final self-check before answering, handling long tool output without losing results, keeping progress notes on long tasks, and stopping honestly when stuck instead of guessing.
+
+### Changed
+
+- The conventions skill is now complete on its own and no longer needs an example project on your computer.
+
+### Removed
+
+- 41 general-purpose skills (design, branding, slides, marketing, writing, and language primers) that overlapped with the new set or were unrelated to coding.
+
 ## 1.0.23 — 2026-11-14
 
 This release makes local models such as Qwen run their tools reliably and adds workspace trust like VS Code.

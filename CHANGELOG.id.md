@@ -4,6 +4,23 @@ Semua perubahan penting di Acelogic Agents. Installer tersedia di halaman [Relea
 
 English: [CHANGELOG.md](CHANGELOG.md)
 
+## 1.0.24 — 15 November 2026
+
+Rilis ini mengganti skill bawaan dengan kumpulan baru yang lebih terarah, yang mengajarkan agent untuk memverifikasi pekerjaannya, terutama saat memakai model lokal.
+
+### Baru
+
+- 33 skill bawaan untuk pekerjaan fullstack sehari-hari: perencanaan, menelusuri kode, membangun fitur dari database, API, web, hingga Flutter, debugging, review, keamanan, migrasi, penanganan uang dan waktu, background job, integrasi, testing, git, dan deployment.
+- Skill yang membuat model lokal lebih andal: pemeriksaan akhir sebelum menjawab, menangani output tool yang panjang tanpa kehilangan hasil, mencatat progres pada tugas panjang, dan berhenti dengan jujur saat buntu alih-alih menebak.
+
+### Diubah
+
+- Skill konvensi sekarang lengkap dengan sendirinya dan tidak lagi membutuhkan project contoh di komputer Anda.
+
+### Dihapus
+
+- 41 skill umum (desain, branding, slide, marketing, penulisan, dan pengantar bahasa pemrograman) yang tumpang tindih dengan kumpulan baru atau tidak berkaitan dengan coding.
+
 ## 1.0.23 — 14 November 2026
 
 Rilis ini membuat model lokal seperti Qwen menjalankan tool dengan benar dan menambahkan kepercayaan workspace seperti VS Code.
