@@ -4,6 +4,19 @@ Semua perubahan penting di Acelogic Agents. Installer tersedia di halaman [Relea
 
 English: [CHANGELOG.md](CHANGELOG.md)
 
+## 1.0.25 — 15 November 2026
+
+Rilis ini membuat agent bisa membuat dan mengedit gambar di GPU Anda sendiri dengan ComfyUI.
+
+### Baru
+
+- Generate gambar dengan ComfyUI lokal. Minta gambar ke agent, atau ketik `/gambar` (juga `/image` atau `/img`) diikuti deskripsi untuk mengirimnya langsung ke ComfyUI tanpa model chat. Aktifkan di Settings → Image generation, tempat Anda memilih model, ukuran, steps, dan sampler, atau memakai workflow ComfyUI sendiri.
+- Edit gambar dari referensi: lampirkan hingga 4 gambar lalu jelaskan perubahannya, misalnya "ganti latar belakangnya jadi pantai". Hasilnya mengikuti rasio gambar pertama.
+- ComfyUI menyala sendiri. Anda tidak perlu lagi membuka ComfyUI Desktop: aplikasi menemukan instalasi ComfyUI Desktop beserta modelnya, menjalankan ComfyUI di latar belakang saat gambar pertama dibutuhkan, dan mematikannya saat aplikasi ditutup. Anda juga bisa memilih folder ComfyUI lain.
+- Pilih GPU untuk ComfyUI. Di komputer dengan lebih dari satu GPU, mode Otomatis menaruh ComfyUI di GPU yang sedang kosong, misalnya bukan GPU yang menjalankan LLM lokal Anda, supaya tidak saling berebut memori. Anda juga bisa memilih GPU sendiri.
+- Preview langsung selama gambar dibuat, lengkap dengan hitungan langkah.
+- Gambar hasil generate tampil di chat. Klik untuk melihat ukuran penuh, pakai Folder untuk menampilkan file di File Explorer, atau Buka untuk melihatnya di aplikasi default.
+
 ## 1.0.24 — 15 November 2026
 
 Rilis ini mengganti skill bawaan dengan kumpulan baru yang lebih terarah, yang mengajarkan agent untuk memverifikasi pekerjaannya, terutama saat memakai model lokal.

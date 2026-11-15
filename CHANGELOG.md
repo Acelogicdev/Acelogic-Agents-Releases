@@ -4,6 +4,19 @@ All notable changes to Acelogic Agents. Installers are on the [Releases](https:/
 
 Bahasa Indonesia: [CHANGELOG.id.md](CHANGELOG.id.md)
 
+## 1.0.25 — 2026-11-15
+
+This release lets the agent create and edit images on your own GPU with ComfyUI.
+
+### New
+
+- Image generation with a local ComfyUI. Ask the agent for an image, or type `/gambar` (also `/image` or `/img`) followed by a description to send it straight to ComfyUI without the chat model. Turn it on in Settings → Image generation, where you pick the models, size, steps, and sampler, or use your own ComfyUI workflow.
+- Edit images from a reference: attach up to 4 images and describe the change, for example "replace the background with a beach". The result keeps the first image's aspect ratio.
+- ComfyUI starts by itself. You no longer need to open ComfyUI Desktop: the app finds your ComfyUI Desktop installation and its models, starts ComfyUI in the background when the first image is needed, and stops it when you close the app. You can also point it to another ComfyUI folder.
+- Choose the GPU for ComfyUI. On computers with more than one GPU, Automatic puts ComfyUI on the GPU that is free, for example not the one running your local LLM, so they do not compete for memory. You can also pick a GPU yourself.
+- Live preview while an image is being made, with a step counter.
+- Generated images appear in the chat. Click one to see it full size, use Folder to show the file in File Explorer, or Open to view it in your default app.
+
 ## 1.0.24 — 2026-11-15
 
 This release replaces the built-in skills with a focused set that teaches the agent to verify its work, especially on local models.
