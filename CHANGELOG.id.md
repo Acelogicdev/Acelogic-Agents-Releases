@@ -4,6 +4,31 @@ Semua perubahan penting di Acelogic Agents. Installer tersedia di halaman [Relea
 
 English: [CHANGELOG.md](CHANGELOG.md)
 
+## 1.0.26 — 16 November 2026
+
+Rilis ini membuat sesi agent yang panjang tetap berjalan: konteks dipadatkan lalu agent melanjutkan tugasnya, dan pesan error kini menyebutkan penyebab sebenarnya.
+
+### Baru
+
+- Pemadatan konteks otomatis seperti Claude Code. Saat percakapan hampir memenuhi jendela konteks model, atau provider menolak permintaan karena terlalu panjang, agent merangkum percakapan lalu melanjutkan tugas, bukan berhenti dengan error. Kartu "Padatkan konteks" menunjukkan berapa token yang dibebaskan.
+- Tombol padatkan di sebelah meter konteks di atas composer, untuk memadatkan percakapan sendiri kapan saja.
+- Meter konteks kini ter-update langsung selama agent bekerja, bukan hanya setelah selesai.
+
+### Diubah
+
+- Agent lebih konsisten mengikuti instruksi default. Instruksi dikirim sebagai aturan yang wajib diikuti, dan pengingat singkat berisi aturan inti ikut di setiap pesan. Saat web tools menyala, prompt bawaan OpenCode yang bertentangan dengan aturan ini diganti.
+- Di model tanpa vision, gambar yang dilampirkan dikirim sebagai file beserta path-nya, sehingga agent tetap bisa memakainya di tools seperti generate gambar. Gambar yang di-paste juga bisa.
+- Saat sesi tidak bisa dilanjutkan, riwayat chat yang sangat panjang dipangkas agar muat di jendela konteks model.
+
+### Diperbaiki
+
+- Model vision tidak bisa melihat gambar lampiran saat web tools menyala ("this model does not support image input").
+- Di model tanpa vision, membaca gambar atau PDF lewat tool tidak lagi menggagalkan permintaan.
+- `/gambar` kini memakai gambar yang dilampirkan di model tanpa vision sebagai referensi.
+- "Runtime Acelogic Agents gagal." dan "berhenti dengan kode 1" tanpa detail: error kini menampilkan penyebab sebenarnya, misalnya model melebihi batas output atau konteks penuh, dan giliran yang sebenarnya sudah selesai tidak lagi dilaporkan gagal.
+- Peringatan "claude.ai connectors are disabled" tidak lagi muncul di detail error.
+- Error konteks penuh dari llama.cpp ("exceeds the available context size") kini dikenali sebagai konteks penuh.
+
 ## 1.0.25 — 15 November 2026
 
 Rilis ini membuat agent bisa membuat dan mengedit gambar di GPU Anda sendiri dengan ComfyUI.

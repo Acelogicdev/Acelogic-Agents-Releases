@@ -4,6 +4,31 @@ All notable changes to Acelogic Agents. Installers are on the [Releases](https:/
 
 Bahasa Indonesia: [CHANGELOG.id.md](CHANGELOG.id.md)
 
+## 1.0.26 — 2026-11-16
+
+This release keeps long agent sessions going: the context is compacted and the agent continues, and errors now say what actually went wrong.
+
+### New
+
+- Automatic context compaction like Claude Code. When the conversation gets close to the model's context window, or the provider rejects a request because it is too long, the agent summarizes the conversation and continues the task instead of stopping with an error. A "Compact context" card shows how many tokens were freed.
+- A compact button next to the context meter above the composer, to compact the conversation yourself at any time.
+- The context meter now updates live while the agent works, not only after it finishes.
+
+### Changed
+
+- The agent follows its default instructions more consistently. They are sent as binding rules, and a short reminder of the core rules goes with every message. With web tools on, the built-in OpenCode prompt that conflicted with these rules is replaced.
+- On models without vision, attached images are passed as files with their path, so the agent can still hand them to tools such as image generation. Pasted images work too.
+- When a session cannot be resumed, very long chat histories are trimmed to fit the model's context window.
+
+### Fixed
+
+- Vision models could not see attached images when web tools were on ("this model does not support image input").
+- On models without vision, reading an image or PDF with a tool no longer fails the request.
+- `/gambar` now uses images attached on models without vision as references.
+- "Runtime Acelogic Agents gagal." and "berhenti dengan kode 1" without details: errors now show the real cause, such as the model exceeding its output limit or a full context, and a turn that already finished is no longer reported as failed.
+- The "claude.ai connectors are disabled" warning no longer appears in error details.
+- Full-context errors from llama.cpp ("exceeds the available context size") are recognized as a full context.
+
 ## 1.0.25 — 2026-11-15
 
 This release lets the agent create and edit images on your own GPU with ComfyUI.
