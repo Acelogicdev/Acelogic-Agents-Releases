@@ -4,6 +4,25 @@ Semua perubahan penting di Acelogic Agents. Installer tersedia di halaman [Relea
 
 English: [CHANGELOG.md](CHANGELOG.md)
 
+## 1.0.27 — 21 November 2026
+
+Rilis ini fix dua annoyances dalam composer dan add repo, plus panel yang bisa dragged wider.
+
+### Baru
+
+- Panel kiri (session) and right (agent) can be resized by dragging the edge; width remembered after restart.
+- Add folder now explains itself: pick a plain folder says "not a git repository", pick an open one says already added, failed add shows error instead of doing nothing.
+
+### Diubah
+
+- Context window read from more provider fields (`meta.n_ctx`, `n_ctx`), so llama-server reports real number (e.g. 262144) not "unknown".
+- Model with unknown context still auto-compacts using safe fallback 32768 tokens, until provider reports real value.
+
+### Fixed
+
+- Composer could not type after picking a model in the picker: focus lost when menu closed; now refocused on every close path (pick, Escape, outside click).
+- OpenCode auto-compact notice missing token numbers ("Konteks dipadatkan otomatis" without X → Y); meter rebases from post value instead of staying stuck high.
+
 ## 1.0.26 — 16 November 2026
 
 Rilis ini membuat sesi agent yang panjang tetap berjalan: konteks dipadatkan lalu agent melanjutkan tugasnya, dan pesan error kini menyebutkan penyebab sebenarnya.
