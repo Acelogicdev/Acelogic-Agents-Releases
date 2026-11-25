@@ -4,6 +4,20 @@ Semua perubahan penting di Acelogic Agents. Installer tersedia di halaman [Relea
 
 English: [CHANGELOG.md](CHANGELOG.md)
 
+## 1.0.28 - 26 November 2026
+
+Rilis ini memperbarui tampilan chat dan memudahkan pemeriksaan proses berpikir model serta pemakaian konteks.
+
+### Baru
+
+- Proses berpikir model pada jawaban yang selesai dapat dibuka di atas jawaban.
+- Sorot indikator konteks untuk melihat persentase, progres, token terpakai, batas, dan sisa.
+
+### Diubah
+
+- Percakapan kini memakai bubble pesan ringkas dan aksi dengan tooltip; aktivitas agent, rencana, edit file, dan status tampil sebagai jejak yang dapat dibuka.
+- Blok kode di jawaban, keluaran tool, dan diff dapat disalin sekali klik serta menandai baris yang ditambah atau dihapus; saran di layar sambutan menjadi tombol ringkas dengan tooltip.
+
 ## 1.0.27 — 21 November 2026
 
 Rilis ini fix dua annoyances dalam composer dan add repo, plus panel yang bisa dragged wider.

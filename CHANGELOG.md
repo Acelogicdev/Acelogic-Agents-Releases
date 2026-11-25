@@ -4,6 +4,20 @@ All notable changes to Acelogic Agents. Installers are on the [Releases](https:/
 
 Bahasa Indonesia: [CHANGELOG.id.md](CHANGELOG.id.md)
 
+## 1.0.28 - 26 November 2026
+
+This release refreshes the chat and makes model reasoning and context usage easier to inspect.
+
+### New
+
+- Completed model responses can reveal the model's thinking above the answer.
+- Hover over the context indicator to see its percentage, progress, tokens used, limit, and remaining tokens.
+
+### Changed
+
+- The conversation uses compact message bubbles and tooltip actions; agent activity, plans, file edits, and status appear in an expandable trace.
+- Code blocks in replies, tool output, and diffs can be copied with one click and mark added or removed lines; welcome suggestions are compact buttons with tooltip descriptions.
+
 ## 1.0.27 — 2026-11-21
 
 This release fixes two composer annoyances and adds resizable side panels.
