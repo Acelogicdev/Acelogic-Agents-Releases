@@ -4,6 +4,26 @@ Semua perubahan penting di Acelogic Agents. Installer tersedia di halaman [Relea
 
 English: [CHANGELOG.md](CHANGELOG.md)
 
+## 1.0.29 - 26 November 2026
+
+Rilis ini menambahkan Penghemat token untuk mengurangi token yang dibaca model, serta merapikan composer dan chat.
+
+### Baru
+
+- Pengaturan punya tab baru **Penghemat token**. **Padatkan output alat (RTK)** menjalankan perintah shell agent (git, grep, ls, tree, log) lewat RTK, sehingga outputnya memakai token input 60-90% lebih sedikit. RTK ikut terpasang bersama installer dan aktif secara bawaan.
+- **Padatkan konteks (Headroom)** memadatkan prompt sebelum dikirim ke model OpenAI-compatible kustom. Mati secara bawaan dan butuh Headroom terpasang (`pip install "headroom-ai[proxy]"`). Bila Headroom gagal, prompt asli tetap dikirim.
+- "Proses berpikir" kini menampilkan lama model berpikir, misalnya "Berpikir selama 12 detik".
+
+### Diubah
+
+- Pemilih model dan effort di composer kini berupa menu: model dikelompokkan per provider dengan pencarian, dan effort berupa daftar singkat.
+- Statistik pesan muat dalam satu baris; sorot untuk melihat detail lengkapnya.
+- Saat agent bekerja hanya ada satu baris status dengan loader piksel, label berkilau, dan timer.
+
+### Diperbaiki
+
+- Installer hasil build lokal kini memperbarui instalasi yang ada, bukan muncul sebagai aplikasi kedua.
+
 ## 1.0.28 - 26 November 2026
 
 Rilis ini memperbarui tampilan chat dan memudahkan pemeriksaan proses berpikir model serta pemakaian konteks.

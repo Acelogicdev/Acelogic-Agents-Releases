@@ -4,6 +4,26 @@ All notable changes to Acelogic Agents. Installers are on the [Releases](https:/
 
 Bahasa Indonesia: [CHANGELOG.id.md](CHANGELOG.id.md)
 
+## 1.0.29 - 26 November 2026
+
+This release adds a Token saver to cut the tokens the model reads, and tidies up the composer and the chat.
+
+### New
+
+- Settings has a new **Token saver** tab. **Compress tool output (RTK)** runs the agent's shell commands (git, grep, ls, tree, logs) through RTK, so their output uses 60-90% fewer input tokens. RTK ships with the installer, and the setting is on by default.
+- **Compress context (Headroom)** compresses prompts before they reach a custom OpenAI-compatible model. It is off by default and needs Headroom installed (`pip install "headroom-ai[proxy]"`). If Headroom fails, the original prompt is sent.
+- "Thought process" now shows how long the model thought, for example "Thought for 12s".
+
+### Changed
+
+- The model and effort pickers in the composer are now menus: models are grouped by provider with search, and effort is a short list.
+- Message statistics fit on one line; hover it for the full details.
+- While the agent works there is a single status line with a pixel loader, a shimmering label, and a timer.
+
+### Fixed
+
+- A locally built installer now updates the existing installation instead of appearing as a second app.
+
 ## 1.0.28 - 26 November 2026
 
 This release refreshes the chat and makes model reasoning and context usage easier to inspect.
