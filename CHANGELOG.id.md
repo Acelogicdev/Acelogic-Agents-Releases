@@ -4,6 +4,17 @@ Semua perubahan penting di Acelogic Agents. Installer tersedia di halaman [Relea
 
 English: [CHANGELOG.md](CHANGELOG.md)
 
+## 1.0.30 - 27 November 2026
+
+Rilis ini membuat agent berhenti tepat waktu: tidak ada lagi build/test/typecheck berulang, dan timeline chat menampilkan tiap langkah di tempat aslinya.
+
+### Diperbaiki
+
+- Agent tidak lagi menjalankan typecheck, test, atau build ulang setelah pemeriksaan itu lulus, dan perubahan dokumen/konfigurasi saja tidak lagi memicu pemeriksaan.
+- Saat agent menjawab "selesai" tapi rencananya masih punya item terbuka, ia cukup menutup status rencananya, bukan mengerjakan ulang yang sudah selesai; jawaban final yang terpotong dipulihkan, bukan dibiarkan menggantung.
+- Kartu perubahan file tampil per langkah di posisi aslinya, bukan satu kartu besar yang menumpuk di awal turn.
+- Status "Compacting context" tidak lagi menempel di kartu aktivitas turn sebelumnya; ia muncul sebagai kartu baru sendiri.
+
 ## 1.0.29 - 26 November 2026
 
 Rilis ini menambahkan Penghemat token untuk mengurangi token yang dibaca model, serta merapikan composer dan chat.

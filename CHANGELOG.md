@@ -4,6 +4,17 @@ All notable changes to Acelogic Agents. Installers are on the [Releases](https:/
 
 Bahasa Indonesia: [CHANGELOG.id.md](CHANGELOG.id.md)
 
+## 1.0.30 - 27 November 2026
+
+This release makes the agent stop knowing when it is done: no more repeated build/test/typecheck runs, and the chat timeline shows each step where it happened.
+
+### Fixed
+
+- The agent no longer runs typecheck, tests, or a full build again after those checks already passed, and documentation or config-only edits no longer trigger them.
+- When the agent answers "done" but its plan still has open items, it now just closes the plan instead of redoing finished work; partial final answers are restored instead of left dangling.
+- File edit cards appear per step at their real position in the conversation instead of one big card stacked at the start of the turn.
+- The "Compacting context" status no longer sticks to the previous turn's activity card; it appears as its own new card.
+
 ## 1.0.29 - 26 November 2026
 
 This release adds a Token saver to cut the tokens the model reads, and tidies up the composer and the chat.
