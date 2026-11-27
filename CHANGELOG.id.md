@@ -4,6 +4,25 @@ Semua perubahan penting di Acelogic Agents. Installer tersedia di halaman [Relea
 
 English: [CHANGELOG.md](CHANGELOG.md)
 
+## 1.0.31 - 27 November 2026
+
+Rilis ini membuat agent tidak lagi macet saat test, dan agent membuat test sendiri bila proyek belum punya.
+
+### Diperbaiki
+
+- Agent tidak lagi tertahan lama saat test. Perintah test dibatasi 3 menit, dan bila kena batas waktu agent diarahkan memakai perintah sekali jalan atau yang lebih sempit (misalnya `vitest run` atau hanya file yang diubah), bukan mengulang dengan timeout lebih besar.
+- Perintah shell berjalan non-interaktif: git tidak menunggu prompt password, pager dimatikan, dan Playwright tidak lagi membuka server report.
+- Agent menjalankan tiap pemeriksaan sekali. Test yang sudah lulus tidak dijalankan lagi; test diulang hanya setelah kegagalan karena kode diperbaiki.
+
+### Baru
+
+- Bila proyek belum punya test, agent membuat test kecil untuk perilaku yang diubahnya dengan runner bawaan bahasa (`node --test`, `python -m unittest`, `go test`, …) tanpa menambah dependensi.
+
+### Diubah
+
+- Instruksi default agent diringkas sekitar separuhnya dan kini merujuk ke design system serta skill platform Acelogic.
+- Skill bawaan `acelogic-conventions`, `codebase-memory`, dan `write-tests` diperbarui ke versi terbaru.
+
 ## 1.0.30 - 27 November 2026
 
 Rilis ini membuat agent berhenti tepat waktu: tidak ada lagi build/test/typecheck berulang, dan timeline chat menampilkan tiap langkah di tempat aslinya.

@@ -4,6 +4,25 @@ All notable changes to Acelogic Agents. Installers are on the [Releases](https:/
 
 Bahasa Indonesia: [CHANGELOG.id.md](CHANGELOG.id.md)
 
+## 1.0.31 - 27 November 2026
+
+This release stops the agent from getting stuck on tests and makes it write its own tests when a project has none.
+
+### Fixed
+
+- The agent no longer hangs for a long time on tests. Test commands are capped at 3 minutes, and when a command times out the agent is told to switch to a single-run or narrower command (for example `vitest run` or only the changed files) instead of retrying with a larger timeout.
+- Shell commands run non-interactively: git never waits for a password prompt, pagers are off, and Playwright no longer opens its report server.
+- The agent runs each check once. A test that passed is not run again; it is rerun only after a failure caused by the code has been fixed.
+
+### New
+
+- When a project has no tests, the agent writes a small focused test for the behavior it changed, using the language's built-in runner (`node --test`, `python -m unittest`, `go test`, …) without adding dependencies.
+
+### Changed
+
+- The default agent instructions are about half as long, and they now point to the Acelogic design system and platform skills.
+- The built-in `acelogic-conventions`, `codebase-memory`, and `write-tests` skills are updated to the current versions.
+
 ## 1.0.30 - 27 November 2026
 
 This release makes the agent stop knowing when it is done: no more repeated build/test/typecheck runs, and the chat timeline shows each step where it happened.
