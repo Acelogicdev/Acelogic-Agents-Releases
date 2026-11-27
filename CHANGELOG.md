@@ -4,6 +4,14 @@ All notable changes to Acelogic Agents. Installers are on the [Releases](https:/
 
 Bahasa Indonesia: [CHANGELOG.id.md](CHANGELOG.id.md)
 
+## 1.0.33 - 27 November 2026
+
+This release keeps file edits in their place inside the agent's activity group.
+
+### Fixed
+
+- Inside the activity group, file edits are no longer collected into one card at the position of the first edit. A "File changes" card now groups only consecutive edits; narration, other tools (reading files, shell commands), or assistant text in between start a new card, so each edit step shows where it happened.
+
 ## 1.0.32 - 27 November 2026
 
 This release stops the agent from going back to work after its final answer just to run typecheck, lint, or build again.

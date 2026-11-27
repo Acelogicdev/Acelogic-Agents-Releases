@@ -4,6 +4,14 @@ Semua perubahan penting di Acelogic Agents. Installer tersedia di halaman [Relea
 
 English: [CHANGELOG.md](CHANGELOG.md)
 
+## 1.0.33 - 27 November 2026
+
+Rilis ini membuat edit file tetap tampil di tempatnya di dalam grup aktivitas agent.
+
+### Diperbaiki
+
+- Di dalam grup aktivitas, edit file tidak lagi terkumpul jadi satu kartu di posisi edit pertama. Kartu "Perubahan file" kini hanya menggabungkan edit yang berurutan; narasi, tool lain (baca file, perintah shell), atau teks asisten di antaranya memulai kartu baru, sehingga tiap langkah edit tampil di tempatnya.
+
 ## 1.0.32 - 27 November 2026
 
 Rilis ini membuat agent tidak lagi kembali bekerja setelah jawaban akhirnya hanya untuk menjalankan ulang typecheck, lint, atau build.
