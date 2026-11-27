@@ -4,6 +4,15 @@ All notable changes to Acelogic Agents. Installers are on the [Releases](https:/
 
 Bahasa Indonesia: [CHANGELOG.id.md](CHANGELOG.id.md)
 
+## 1.0.34 - 28 November 2026
+
+This release makes the reasoning effort picker follow what each model actually supports.
+
+### Fixed
+
+- Reasoning effort options now follow the levels a model declares. The `minimal` and `xhigh` levels from a provider's `allowed_options` are no longer dropped, and models that only support `on`/`off` no longer show made-up `low`/`medium`/`high` levels that the provider would reject.
+- Reasoning effort labels (`default`, `minimal`, `low`, `medium`, `high`, `xhigh`) are translated in the composer effort picker and connection settings instead of showing raw English text in the Indonesian UI.
+
 ## 1.0.33 - 27 November 2026
 
 This release keeps file edits in their place inside the agent's activity group.

@@ -4,6 +4,15 @@ Semua perubahan penting di Acelogic Agents. Installer tersedia di halaman [Relea
 
 English: [CHANGELOG.md](CHANGELOG.md)
 
+## 1.0.34 - 28 November 2026
+
+Rilis ini membuat pemilih tingkat penalaran mengikuti kemampuan yang benar-benar didukung tiap model.
+
+### Diperbaiki
+
+- Pilihan tingkat penalaran kini mengikuti level yang dideklarasikan model. Level `minimal` dan `xhigh` dari `allowed_options` provider tidak lagi dibuang, dan model yang hanya mendukung `on`/`off` tidak lagi menampilkan level `low`/`medium`/`high` karangan yang akan ditolak provider.
+- Label tingkat penalaran (`default`, `minimal`, `low`, `medium`, `high`, `xhigh`) diterjemahkan di pemilih effort composer dan pengaturan koneksi, bukan lagi tampil sebagai teks mentah berbahasa Inggris di UI Indonesia.
+
 ## 1.0.33 - 27 November 2026
 
 Rilis ini membuat edit file tetap tampil di tempatnya di dalam grup aktivitas agent.
