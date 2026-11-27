@@ -4,6 +4,16 @@ All notable changes to Acelogic Agents. Installers are on the [Releases](https:/
 
 Bahasa Indonesia: [CHANGELOG.id.md](CHANGELOG.id.md)
 
+## 1.0.32 - 27 November 2026
+
+This release stops the agent from going back to work after its final answer just to run typecheck, lint, or build again.
+
+### Fixed
+
+- After the final answer appears, the agent no longer starts working again to rerun checks that already passed. A plan item for checks that the agent forgot to close counts as done once the checks ran after the last code edit, and other open items are only closed instead of redoing work.
+- Editing documentation or config (for example `CHANGELOG.md`, `README.md`, or `package.json`) after the checks no longer triggers another typecheck or build.
+- A missing tool that is not a check (for example `rg`) no longer makes the agent rerun all project checks, and the warning clears once the same command succeeds.
+
 ## 1.0.31 - 27 November 2026
 
 This release stops the agent from getting stuck on tests and makes it write its own tests when a project has none.

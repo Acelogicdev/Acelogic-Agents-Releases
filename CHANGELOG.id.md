@@ -4,6 +4,16 @@ Semua perubahan penting di Acelogic Agents. Installer tersedia di halaman [Relea
 
 English: [CHANGELOG.md](CHANGELOG.md)
 
+## 1.0.32 - 27 November 2026
+
+Rilis ini membuat agent tidak lagi kembali bekerja setelah jawaban akhirnya hanya untuk menjalankan ulang typecheck, lint, atau build.
+
+### Diperbaiki
+
+- Setelah jawaban akhir keluar, agent tidak lagi mulai bekerja lagi untuk menjalankan ulang pemeriksaan yang sudah lulus. Item rencana pemeriksaan yang lupa ditutup dianggap selesai bila pemeriksaan sudah jalan setelah edit kode terakhir, dan item lain yang masih terbuka cukup ditutup tanpa mengulang pekerjaan.
+- Mengedit dokumen atau konfigurasi (misalnya `CHANGELOG.md`, `README.md`, atau `package.json`) setelah pemeriksaan tidak lagi memicu typecheck atau build ulang.
+- Tool yang tidak terpasang dan bukan pemeriksaan (misalnya `rg`) tidak lagi membuat agent menjalankan ulang semua pemeriksaan proyek, dan peringatannya hilang begitu perintah yang sama berhasil.
+
 ## 1.0.31 - 27 November 2026
 
 Rilis ini membuat agent tidak lagi macet saat test, dan agent membuat test sendiri bila proyek belum punya.
