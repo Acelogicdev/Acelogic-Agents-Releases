@@ -4,6 +4,28 @@ Semua perubahan penting di Acelogic Agents. Installer tersedia di halaman [Relea
 
 English: [CHANGELOG.md](CHANGELOG.md)
 
+## 1.0.35 - 28 November 2026
+
+Rilis ini membuat setiap chat baru dimulai dengan konteks jauh lebih kecil, menyertakan skill platform Acelogic sebagai skill bawaan, dan menghentikan perintah shell panjang yang terpotong di tengah jalan.
+
+### Baru
+
+- Skill platform Acelogic kini bawaan aplikasi: `acelogic-design-system`, `acelogic-backend`, `acelogic-dashboard`, `acelogic-web-uiux` (kit komponen bersama dan resep halaman untuk layar web admin, mitra, dan petugas), `acelogic-web-user`, dan `acelogic-flutter`, lengkap dengan templates-nya. Tidak perlu lagi disalin terpisah.
+- Agent memakai graph kode (MCP codebase-memory) lebih dulu untuk pertanyaan struktural, seperti letak sebuah fitur, call chain, dependensi, dan dampak perubahan.
+- Kartu perintah shell menampilkan berapa lama perintah sudah berjalan dan total durasinya setelah selesai. Saat perintah kena batas waktu, kartu menjelaskan bahwa perintah dihentikan.
+
+### Diubah
+
+- Chat baru dimulai dengan konteks jauh lebih kecil: pada uji "halo", request pertama turun dari sekitar 31.000 ke sekitar 9.600 token sebelum instruksi aplikasi sendiri. Skill dari `~/.claude/skills`, `~/.agents/skills`, dan folder skill Claude lain, `AGENTS.md` global milik OpenCode CLI, serta server MCP dari konfigurasi global OpenCode yang tidak dikelola aplikasi tidak lagi dimuat, dan deskripsi skill yang panjang dipendekkan.
+- Server MCP selalu mati setiap aplikasi dibuka. Server menyala sendiri pada pesan berikutnya begitu pesan Anda atau balasan agent sebelumnya menyebut server yang dikonfigurasi, dan agent kini tahu server apa saja yang tersedia sehingga bisa memintanya saat memang dibutuhkan.
+- Skill bawaan yang tumpang tindih dihapus (`report-to-user`, dilebur ke `self-check`, serta `plan-task`, `explore-codebase`, `flutter-mobile`, dan `config-deploy`), dan beberapa skill lain kini mengikuti konvensi Acelogic. Skill bawaan kini berjumlah 36.
+
+### Diperbaiki
+
+- Perintah shell tidak lagi dihentikan setelah 120 detik bawaan OpenCode: perintah kini mendapat 5 menit (test tetap dibatasi 3 menit), sehingga install dan build panjang tidak lagi tampak macet lalu diulang.
+- Deteksi timeout tidak lagi salah tangkap teks yang hanya memuat frasa timeout, misalnya pencarian frasa itu, sehingga agent tidak lagi diberi tahu soal timeout yang tidak terjadi.
+- Peringatan Node yang tidak berbahaya di stderr tidak lagi dianggap sebagai tool atau modul yang hilang.
+
 ## 1.0.34 - 28 November 2026
 
 Rilis ini membuat pemilih tingkat penalaran mengikuti kemampuan yang benar-benar didukung tiap model.

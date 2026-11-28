@@ -4,6 +4,28 @@ All notable changes to Acelogic Agents. Installers are on the [Releases](https:/
 
 Bahasa Indonesia: [CHANGELOG.id.md](CHANGELOG.id.md)
 
+## 1.0.35 - 28 November 2026
+
+This release makes every new chat start with a much smaller context, bundles the Acelogic platform skills, and stops long shell commands from being cut off.
+
+### New
+
+- The Acelogic platform skills are now built in: `acelogic-design-system`, `acelogic-backend`, `acelogic-dashboard`, `acelogic-web-uiux` (shared component kit and page recipes for admin, mitra, and staff web screens), `acelogic-web-user`, and `acelogic-flutter`, with their templates. They no longer need to be copied in separately.
+- The agent uses the code knowledge graph (codebase-memory MCP) first for structural questions such as where a feature lives, call chains, dependencies, and the impact of a change.
+- Shell command cards show how long each command has been running and its total duration when done. When a command hits its time limit, the card explains that it was stopped.
+
+### Changed
+
+- A new chat starts with much less context: in a "halo" test the first request dropped from about 31,000 to about 9,600 tokens before the app's own instructions. Skills from `~/.claude/skills`, `~/.agents/skills`, and other Claude skill folders, the OpenCode CLI's global `AGENTS.md`, and MCP servers from the global OpenCode config that the app does not manage are no longer loaded, and long skill descriptions were shortened.
+- MCP servers are off every time the app opens. They start on their own on the next message once your message or the agent's previous reply names a configured server, and the agent now knows which servers are available so it can ask for one when needed.
+- Overlapping built-in skills were removed (`report-to-user`, merged into `self-check`, plus `plan-task`, `explore-codebase`, `flutter-mobile`, and `config-deploy`), and several others now follow Acelogic conventions. There are now 36 built-in skills.
+
+### Fixed
+
+- Shell commands are no longer killed after OpenCode's default 120 seconds: commands get 5 minutes (tests stay capped at 3 minutes), so long installs and builds no longer look stuck and get retried.
+- Timeout detection no longer misfires on text that merely contains the timeout phrase, such as a search for it, so the agent is no longer told about timeouts that did not happen.
+- Harmless Node warnings on stderr are no longer mistaken for a missing tool or module.
+
 ## 1.0.34 - 28 November 2026
 
 This release makes the reasoning effort picker follow what each model actually supports.
